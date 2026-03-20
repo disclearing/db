@@ -62,9 +62,8 @@
     ]
   },
   "workspaces": [
-    "packages/*",
-    "examples/*",
-    "examples/react/*"
+    "packages/**",
+    "examples/**"
   ],
   "overrides": {
     "@tanstack/angular-db": "workspace:*",
@@ -80,23 +79,6 @@
     "@tanstack/svelte-db": "workspace:*",
     "@tanstack/trailbase-db-collection": "workspace:*",
     "@tanstack/vue-db": "workspace:*"
-  },
-  "pnpm": {
-    "overrides": {
-      "@tanstack/angular-db": "workspace:*",
-      "@tanstack/db": "workspace:*",
-      "@tanstack/db-ivm": "workspace:*",
-      "@tanstack/electric-db-collection": "workspace:*",
-      "@tanstack/offline-transactions": "workspace:*",
-      "@tanstack/powersync-db-collection": "workspace:*",
-      "@tanstack/query-db-collection": "workspace:*",
-      "@tanstack/react-db": "workspace:*",
-      "@tanstack/rxdb-db-collection": "workspace:*",
-      "@tanstack/solid-db": "workspace:*",
-      "@tanstack/svelte-db": "workspace:*",
-      "@tanstack/trailbase-db-collection": "workspace:*",
-      "@tanstack/vue-db": "workspace:*"
-    }
   },
   "dependencies": {
     "tsx": "^4.20.6"

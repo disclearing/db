@@ -357,4 +357,262 @@ describe(`Firebase Collection Integration`, () => {
       expect(collection.toArray).toHaveLength(1)
     })
   })
+
+  describe(`Enhanced Utils`, () => {
+    it(`should track isFetching during initial sync`, async () => {
+      const collection = createCollection(
+        firebaseCollectionOptions({
+          schema: testTodoSchema,
+          id: `todos`,
+          firestore,
+          collectionPath: `todos`,
+          getKey: (item) => item.id,
+        })
+      )
+
+      // Before sync starts, isFetching should be false
+      expect(collection.utils.isFetching).toBe(false)
+
+      await collection.preload()
+
+      // After sync completes, isFetching should be false
+      expect(collection.utils.isFetching).toBe(false)
+    })
+
+    it(`should expose isError and lastError state`, async () => {
+      const collection = createCollection(
+        firebaseCollectionOptions({
+          schema: testTodoSchema,
+          id: `todos`,
+          firestore,
+          collectionPath: `todos`,
+          getKey: (item) => item.id,
+        })
+      )
+
+      await collection.preload()
+
+      // Should start without errors
+      expect(collection.utils.isError).toBe(false)
+      expect(collection.utils.lastError).toBeUndefined()
+    })
+
+    it(`should allow clearing errors`, async () => {
+      const collection = createCollection(
+        firebaseCollectionOptions({
+          schema: testTodoSchema,
+          id: `todos`,
+          firestore,
+          collectionPath: `todos`,
+          getKey: (item) => item.id,
+        })
+      )
+
+      await collection.preload()
+
+      // clearError should not throw even when there's no error
+      collection.utils.clearError()
+      expect(collection.utils.isError).toBe(false)
+    })
+
+    it(`should support refetch to reload data`, async () => {
+      const collection = createCollection(
+        firebaseCollectionOptions({
+          schema: testTodoSchema,
+          id: `todos`,
+          firestore,
+          collectionPath: `todos`,
+          getKey: (item) => item.id,
+        })
+      )
+
+      await collection.preload()
+
+      // Insert some data
+      const todo: TestTodo = {
+        id: `1`,
+        text: `Test todo`,
+        completed: false,
+      }
+      const insertTx = collection.insert(todo)
+      await insertTx.isPersisted.promise
+
+      expect(collection.toArray).toHaveLength(1)
+
+      // Refetch should reload data from Firestore
+      await collection.utils.refetch()
+
+      // Data should still be there
+      expect(collection.toArray).toHaveLength(1)
+    })
+  })
+
+  describe(`Row Update Mode`, () => {
+    it(`should support partial update mode (default)`, async () => {
+      const collection = createCollection(
+        firebaseCollectionOptions({
+          schema: testTodoSchema,
+          id: `todos`,
+          firestore,
+          collectionPath: `todos`,
+          getKey: (item) => item.id,
+          rowUpdateMode: `partial`,
+        })
+      )
+
+      await collection.preload()
+
+      const todo: TestTodo = {
+        id: `1`,
+        text: `Test todo`,
+        completed: false,
+      }
+      const insertTx = collection.insert(todo)
+      await insertTx.isPersisted.promise
+
+      // Partial update - only change completed
+      const updateTx = collection.update(`1`, (draft) => {
+        draft.completed = true
+      })
+      await updateTx.isPersisted.promise
+
+      const updated = collection.get(`1`)
+      expect(updated?.completed).toBe(true)
+      expect(updated?.text).toBe(`Test todo`)
+    })
+
+    it(`should support full update mode`, async () => {
+      const collection = createCollection(
+        firebaseCollectionOptions({
+          schema: testTodoSchema,
+          id: `todos`,
+          firestore,
+          collectionPath: `todos`,
+          getKey: (item) => item.id,
+          rowUpdateMode: `full`,
+        })
+      )
+
+      await collection.preload()
+
+      const todo: TestTodo = {
+        id: `1`,
+        text: `Test todo`,
+        completed: false,
+      }
+      const insertTx = collection.insert(todo)
+      await insertTx.isPersisted.promise
+
+      const updateTx = collection.update(`1`, (draft) => {
+        draft.completed = true
+      })
+      await updateTx.isPersisted.promise
+
+      const updated = collection.get(`1`)
+      expect(updated?.completed).toBe(true)
+    })
+  })
+
+  describe(`Schema Validation`, () => {
+    it(`should infer types from schema`, async () => {
+      const collection = createCollection(
+        firebaseCollectionOptions({
+          schema: testTodoSchema,
+          id: `todos`,
+          firestore,
+          collectionPath: `todos`,
+          getKey: (item) => item.id,
+        })
+      )
+
+      await collection.preload()
+
+      // Insert should work with correct types
+      const todo = {
+        id: `1`,
+        text: `Schema-typed todo`,
+        completed: false,
+      }
+
+      const insertTx = collection.insert(todo)
+      await insertTx.isPersisted.promise
+
+      const item = collection.get(`1`)
+      expect(item?.id).toBe(`1`)
+      expect(item?.text).toBe(`Schema-typed todo`)
+    })
+
+    it(`should work without schema using explicit types`, async () => {
+      const collection = createCollection(
+        firebaseCollectionOptions<TestTodo>({
+          id: `todos`,
+          firestore,
+          collectionPath: `todos`,
+          getKey: (item) => item.id,
+        })
+      )
+
+      await collection.preload()
+
+      const todo: TestTodo = {
+        id: `1`,
+        text: `Explicitly typed todo`,
+        completed: false,
+      }
+
+      const insertTx = collection.insert(todo)
+      await insertTx.isPersisted.promise
+
+      const item = collection.get(`1`)
+      expect(item?.text).toBe(`Explicitly typed todo`)
+    })
+  })
+
+  describe(`Sync Config Types`, () => {
+    it(`should return SyncConfigRes with cleanup from sync`, async () => {
+      const collection = createCollection(
+        firebaseCollectionOptions({
+          schema: testTodoSchema,
+          id: `todos`,
+          firestore,
+          collectionPath: `todos`,
+          getKey: (item) => item.id,
+        })
+      )
+
+      await collection.preload()
+
+      // The collection should have cancel (cleanup) available
+      expect(typeof collection.utils.cancel).toBe(`function`)
+
+      // Clean up should work without errors
+      collection.utils.cancel()
+    })
+
+    it(`should support on-demand syncMode`, async () => {
+      const collection = createCollection(
+        firebaseCollectionOptions({
+          schema: testTodoSchema,
+          id: `todos`,
+          firestore,
+          collectionPath: `todos`,
+          getKey: (item) => item.id,
+          syncMode: `on-demand`,
+        })
+      )
+
+      await collection.preload()
+
+      // Should still work for basic operations
+      const todo: TestTodo = {
+        id: `1`,
+        text: `On-demand todo`,
+        completed: false,
+      }
+      const insertTx = collection.insert(todo)
+      await insertTx.isPersisted.promise
+
+      expect(collection.toArray).toHaveLength(1)
+    })
+  })
 })

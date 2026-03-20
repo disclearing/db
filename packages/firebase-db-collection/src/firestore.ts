@@ -7,13 +7,16 @@ import {
   limit,
   onSnapshot,
   onSnapshotsInSync,
+  orderBy,
   query,
   runTransaction,
   serverTimestamp,
   startAfter,
   waitForPendingWrites,
+  where,
   writeBatch,
 } from "firebase/firestore"
+import { DeduplicatedLoadSubset, parseOrderByExpression } from "@tanstack/db"
 import {
   ExpectedDeleteTypeError,
   ExpectedInsertTypeError,
@@ -22,10 +25,15 @@ import {
 } from "./errors"
 import type {
   BaseCollectionConfig,
+  CleanupFn,
   CollectionConfig,
   DeleteMutationFnParams,
+  InferSchemaOutput,
   InsertMutationFnParams,
+  LoadSubsetOptions,
   SyncConfig,
+  SyncConfigRes,
+  SyncMode,
   UpdateMutationFnParams,
   UtilsRecord,
 } from "@tanstack/db"
@@ -42,15 +50,10 @@ import type {
   QuerySnapshot,
   SnapshotOptions,
   Unsubscribe,
+  WhereFilterOp,
   WithFieldValue,
 } from "firebase/firestore"
 import type { FirebaseConversion, FirebaseConversions, ShapeOf } from "./types"
-
-type InferSchemaOutput<T> = T extends StandardSchemaV1
-  ? StandardSchemaV1.InferOutput<T> extends object
-    ? StandardSchemaV1.InferOutput<T>
-    : Record<string, unknown>
-  : Record<string, unknown>
 
 const FIRESTORE_BATCH_LIMIT = 500
 
@@ -216,6 +219,31 @@ export interface FirebaseCollectionUtils extends UtilsRecord {
    * Wait for all pending writes to be acknowledged by the server
    */
   waitForSync: () => Promise<void>
+
+  /**
+   * Manually trigger a re-fetch of the collection data from Firestore
+   */
+  refetch: () => Promise<void>
+
+  /**
+   * Whether the collection is currently fetching data
+   */
+  isFetching: boolean
+
+  /**
+   * The last error encountered during sync, if any
+   */
+  lastError: Error | undefined
+
+  /**
+   * Whether the collection is in an error state
+   */
+  isError: boolean
+
+  /**
+   * Clear the current error state
+   */
+  clearError: () => void
 }
 
 interface BufferedEvent {
@@ -323,6 +351,132 @@ class ExponentialBackoff {
   }
 }
 
+/**
+ * Convert a single where expression to Firestore QueryConstraints.
+ * Returns an array because AND expressions produce multiple constraints.
+ */
+function whereExprToFirestore(expr: any): Array<QueryConstraint> {
+  if (!expr || expr.type !== `fn`) return []
+
+  const { name, args } = expr
+
+  // Extract field path from a ref expression
+  const extractField = (ref: any): string | null => {
+    if (ref?.type === `ref`) {
+      return Array.isArray(ref.path) ? ref.path.join(`.`) : String(ref.path)
+    }
+    return null
+  }
+
+  // Extract value from a val expression
+  const extractValue = (val: any): unknown => {
+    if (val?.type === `val`) return val.value
+    return undefined
+  }
+
+  // Comparison operators: eq, gt, gte, lt, lte, in
+  const comparisonOps: Record<string, WhereFilterOp> = {
+    eq: `==`,
+    gt: `>`,
+    gte: `>=`,
+    lt: `<`,
+    lte: `<=`,
+    in: `in`,
+  }
+
+  if (comparisonOps[name]) {
+    const field = extractField(args[0])
+    const value = extractValue(args[1])
+    if (field && value !== undefined) {
+      return [where(field, comparisonOps[name], value)]
+    }
+    return []
+  }
+
+  // AND: flatten all child constraints into a single array
+  if (name === `and`) {
+    const result: Array<QueryConstraint> = []
+    for (const arg of args) {
+      result.push(...whereExprToFirestore(arg))
+    }
+    return result
+  }
+
+  // OR: Firestore doesn't support OR natively
+  if (name === `or`) {
+    throw new FirestoreIntegrationError(
+      `Firestore does not support OR in loadSubset queries. Use separate collections for OR logic.`
+    )
+  }
+
+  // NOT: invert the inner constraint
+  if (name === `not` && args.length === 1) {
+    const inner = args[0]
+    if (inner?.type === `fn` && inner.name === `eq`) {
+      const field = extractField(inner.args[0])
+      const value = extractValue(inner.args[1])
+      if (field && value !== undefined) {
+        return [where(field, `!=`, value)]
+      }
+    }
+    if (inner?.type === `fn` && inner.name === `in`) {
+      const field = extractField(inner.args[0])
+      const value = extractValue(inner.args[1])
+      if (field && value !== undefined) {
+        return [where(field, `not-in`, value)]
+      }
+    }
+    throw new FirestoreIntegrationError(
+      `Firestore does not support NOT for this operator in loadSubset queries.`
+    )
+  }
+
+  // isNull / isUndefined
+  if (name === `isNull` || name === `isUndefined`) {
+    const field = extractField(args[0])
+    if (field) {
+      return [where(field, `==`, null)]
+    }
+    return []
+  }
+
+  throw new FirestoreIntegrationError(
+    `Unsupported operator in loadSubset: '${name}'. Supported: eq, gt, gte, lt, lte, in, and, not, isNull, isUndefined.`
+  )
+}
+
+/**
+ * Convert LoadSubsetOptions into Firestore QueryConstraint objects.
+ */
+function loadSubsetToQueryConstraints(
+  options: LoadSubsetOptions
+): Array<QueryConstraint> {
+  const constraints: Array<QueryConstraint> = []
+
+  // Convert where predicates to Firestore where clauses
+  if (options.where) {
+    constraints.push(...whereExprToFirestore(options.where))
+  }
+
+  // Convert orderBy to Firestore orderBy
+  if (options.orderBy) {
+    const sorts = parseOrderByExpression(options.orderBy)
+    for (const sort of sorts) {
+      const field = Array.isArray(sort.field)
+        ? sort.field.join(`.`)
+        : String(sort.field)
+      constraints.push(orderBy(field, sort.direction))
+    }
+  }
+
+  // Add limit
+  if (options.limit !== undefined) {
+    constraints.push(limit(options.limit))
+  }
+
+  return constraints
+}
+
 // Overload: with schema
 export function firebaseCollectionOptions<TSchema extends StandardSchemaV1>(
   config: FirebaseCollectionConfig<
@@ -375,6 +529,7 @@ export function firebaseCollectionOptions<
     ...restConfig
   } = config
 
+  const syncMode: SyncMode = restConfig.syncMode ?? `eager`
   const getKey = config.getKey || ((item: TItem) => (item as any).id as TKey)
 
   const parse = (record: TRecord) =>
@@ -404,14 +559,30 @@ export function firebaseCollectionOptions<
     })
   }
 
+  let isFetching = false
+  let lastError: Error | undefined
+  const setIsFetching = (val: boolean) => {
+    isFetching = val
+  }
+  const setError = (err: Error) => {
+    lastError = err
+  }
+  const clearError = () => {
+    lastError = undefined
+  }
+
+  let refetch: () => Promise<void>
+  let loadSubsetDedupe: DeduplicatedLoadSubset | undefined
+
   type SyncParams = Parameters<SyncConfig<TItem, TKey>[`sync`]>[0]
   const sync: SyncConfig<TItem, TKey> = {
-    sync: (params: SyncParams) => {
+    sync: (params: SyncParams): void | CleanupFn | SyncConfigRes => {
       const {
         begin,
         write,
         commit,
         markReady,
+        truncate,
         collection: dbCollection,
       } = params
 
@@ -574,25 +745,89 @@ export function firebaseCollectionOptions<
       // STEP 4: Execute in correct order
       async function start() {
         try {
+          setIsFetching(true)
           setupListener() // First! Prevents race condition
           await backoff.execute(() => initialFetch(), `initial fetch`)
           isInitialFetchComplete = true
           processBufferedEvents()
         } catch (error) {
+          const err = error instanceof Error ? error : new Error(String(error))
+          setError(err)
           console.error(`[${dbCollection.id}] Sync failed:`, error)
           cancelSnapshot()
           throw error
         } finally {
+          setIsFetching(false)
           markReady() // Always call this
         }
       }
 
+      // Set up refetch utility
+      refetch = async () => {
+        try {
+          setIsFetching(true)
+          clearError()
+          truncate()
+          isInitialFetchComplete = false
+          fetchedIds.clear()
+          eventBuffer.length = 0
+          await backoff.execute(() => initialFetch(), `refetch`)
+          isInitialFetchComplete = true
+          processBufferedEvents()
+        } catch (error) {
+          const err = error instanceof Error ? error : new Error(String(error))
+          setError(err)
+          throw error
+        } finally {
+          setIsFetching(false)
+        }
+      }
+
+      // Set up loadSubset for on-demand sync
+      if (syncMode !== `eager`) {
+        loadSubsetDedupe = new DeduplicatedLoadSubset({
+          loadSubset: async (opts: LoadSubsetOptions) => {
+            const subsetConstraints = loadSubsetToQueryConstraints(opts)
+            const allConstraints = [...queryConstraints, ...subsetConstraints]
+            const q = query(collectionRef, ...allConstraints)
+            const snapshot = await getDocs(q)
+
+            if (!snapshot.empty) {
+              begin()
+              snapshot.forEach((docSnap: QueryDocumentSnapshot) => {
+                const id = docSnap.id
+                fetchedIds.add(id)
+
+                const data = converter
+                  ? converter.fromFirestore(docSnap, {})
+                  : ({ id, ...docSnap.data() } as unknown as TRecord)
+
+                write({
+                  type: `insert`,
+                  value: parse(data),
+                })
+              })
+              commit()
+            }
+          },
+        })
+      }
+
       start()
 
-      // CRITICAL: Return cleanup function
-      return () => {
-        cancelSnapshot()
+      // Return SyncConfigRes with cleanup and loadSubset
+      const syncRes: SyncConfigRes = {
+        cleanup: () => {
+          cancelSnapshot()
+          loadSubsetDedupe?.reset()
+        },
       }
+
+      if (loadSubsetDedupe) {
+        syncRes.loadSubset = loadSubsetDedupe.loadSubset
+      }
+
+      return syncRes
     },
     rowUpdateMode,
     getSyncMetadata: () => ({
@@ -756,6 +991,24 @@ export function firebaseCollectionOptions<
       cancel: cancelSnapshot,
       getCollectionRef: () => collectionRef,
       waitForSync,
+      get refetch() {
+        if (!refetch) {
+          throw new FirestoreIntegrationError(
+            `refetch is not available until the collection has started syncing`
+          )
+        }
+        return refetch
+      },
+      get isFetching() {
+        return isFetching
+      },
+      get lastError() {
+        return lastError
+      },
+      get isError() {
+        return lastError !== undefined
+      },
+      clearError,
     },
   }
 }
