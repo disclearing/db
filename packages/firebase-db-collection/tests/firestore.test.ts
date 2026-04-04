@@ -1,6 +1,6 @@
 import { afterAll, beforeAll, beforeEach, describe, expect, it } from "vitest"
 import { initializeTestEnvironment } from "@firebase/rules-unit-testing"
-import { createCollection } from "@tanstack/db"
+import { createCollection } from "disclearing-db"
 import { z } from "zod"
 import { firebaseCollectionOptions } from "../src/firestore"
 import type { RulesTestEnvironment } from "@firebase/rules-unit-testing"
@@ -286,19 +286,22 @@ describe(`Firebase Collection Integration`, () => {
       )
 
       await collection.preload()
+      const todoId = `date-${Date.now()}-${Math.random().toString(36).slice(2)}`
 
       const todo: TestTodo = {
-        id: `1`,
+        id: todoId,
         text: `Test todo`,
         completed: false,
         createdAt: new Date(),
       }
 
-      collection.insert(todo)
+      const insertTx = collection.insert(todo)
+      await insertTx.isPersisted.promise
+      await collection.utils.waitForSync()
 
-      const retrieved = collection.get(`1`)
+      const retrieved = collection.get(todoId)
       expect(retrieved?.createdAt).toBeInstanceOf(Date)
-    })
+    }, 10000)
   })
 
   describe(`Error Handling`, () => {
@@ -345,8 +348,9 @@ describe(`Firebase Collection Integration`, () => {
       collection.utils.cancel()
 
       // Collection should still work for local operations
+      const todoId = `cleanup-${Date.now()}-${Math.random().toString(36).slice(2)}`
       const todo: TestTodo = {
-        id: `1`,
+        id: todoId,
         text: `Test todo`,
         completed: false,
       }

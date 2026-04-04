@@ -16,7 +16,7 @@ import {
   where,
   writeBatch,
 } from "firebase/firestore"
-import { DeduplicatedLoadSubset, parseOrderByExpression } from "@tanstack/db"
+import { DeduplicatedLoadSubset, parseOrderByExpression } from "disclearing-db"
 import {
   ExpectedDeleteTypeError,
   ExpectedInsertTypeError,
@@ -36,7 +36,7 @@ import type {
   SyncMode,
   UpdateMutationFnParams,
   UtilsRecord,
-} from "@tanstack/db"
+} from "disclearing-db"
 import type { StandardSchemaV1 } from "@standard-schema/spec"
 import type {
   CollectionReference,
@@ -95,6 +95,52 @@ function convertPartial<
       return [k, c[k]?.(value as any) ?? value]
     })
   ) as OutputType
+}
+
+function isPlainObject(value: unknown): value is Record<string, unknown> {
+  if (value === null || typeof value !== `object`) return false
+  const prototype = Object.getPrototypeOf(value)
+  return prototype === Object.prototype || prototype === null
+}
+
+function normalizeFirestoreValue(value: unknown): unknown {
+  if (value === null || value === undefined) return value
+
+  if (value instanceof Date) {
+    return value
+  }
+
+  if (
+    typeof value === `object` &&
+    `toDate` in value &&
+    typeof value.toDate === `function`
+  ) {
+    const date = value.toDate()
+    if (date instanceof Date) {
+      return date
+    }
+  }
+
+  if (Array.isArray(value)) {
+    return value.map((entry) => normalizeFirestoreValue(entry))
+  }
+
+  if (isPlainObject(value)) {
+    return Object.fromEntries(
+      Object.entries(value).map(([key, entry]) => [
+        key,
+        normalizeFirestoreValue(entry),
+      ])
+    )
+  }
+
+  return value
+}
+
+function normalizeFirestoreRecord<T extends Record<string, unknown>>(
+  record: T
+): T {
+  return normalizeFirestoreValue(record) as T
 }
 
 /**
@@ -533,7 +579,10 @@ export function firebaseCollectionOptions<
   const getKey = config.getKey || ((item: TItem) => (item as any).id as TKey)
 
   const parse = (record: TRecord) =>
-    convert<TRecord, TItem>(parseConversions, record)
+    convert<TRecord, TItem>(
+      parseConversions,
+      normalizeFirestoreRecord(record as Record<string, unknown>) as TRecord
+    )
   const serialUpd = (item: Partial<TItem>) =>
     convertPartial<TItem, TRecord>(serializeConversions, item)
   const serialIns = (item: TItem) =>
@@ -767,7 +816,9 @@ export function firebaseCollectionOptions<
         try {
           setIsFetching(true)
           clearError()
+          begin()
           truncate()
+          commit()
           isInitialFetchComplete = false
           fetchedIds.clear()
           eventBuffer.length = 0
