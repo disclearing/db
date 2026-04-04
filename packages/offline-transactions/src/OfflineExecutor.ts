@@ -1,5 +1,5 @@
 // Storage adapters
-import { createOptimisticAction, createTransaction } from "@tanstack/db"
+import { createOptimisticAction, createTransaction } from "disclearing-db"
 import { IndexedDBAdapter } from "./storage/IndexedDBAdapter"
 import { LocalStorageAdapter } from "./storage/LocalStorageAdapter"
 
@@ -33,7 +33,7 @@ import type {
   StorageAdapter,
   StorageDiagnostic,
 } from "./types"
-import type { Transaction } from "@tanstack/db"
+import type { Transaction } from "disclearing-db"
 
 export class OfflineExecutor {
   private config: OfflineConfig

@@ -1,9 +1,9 @@
 ---
-id: "@tanstack/angular-db"
-title: "@tanstack/angular-db"
+id: "disclearing-angular-db"
+title: "disclearing-angular-db"
 ---
 
-# @tanstack/angular-db
+# disclearing-angular-db
 
 ## Interfaces
 

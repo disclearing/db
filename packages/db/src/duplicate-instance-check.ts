@@ -17,7 +17,7 @@ function isBrowserTopWindow(): boolean {
 }
 
 // Detect duplicate @tanstack/db instances (dev-only, browser top-window only)
-const DB_INSTANCE_MARKER = Symbol.for(`@tanstack/db/instance-marker`)
+const DB_INSTANCE_MARKER = Symbol.for(`disclearing-db/instance-marker`)
 const DEV =
   typeof process !== `undefined` && process.env.NODE_ENV !== `production`
 const DISABLED =

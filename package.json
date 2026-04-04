@@ -3,7 +3,7 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/tanstack/db.git"
+    "url": "https://github.com/disclearing/db.git"
   },
   "packageManager": "pnpm@10.22.0",
   "type": "module",
@@ -66,19 +66,19 @@
     "examples/**"
   ],
   "overrides": {
-    "@tanstack/angular-db": "workspace:*",
-    "@tanstack/db": "workspace:*",
-    "@tanstack/db-ivm": "workspace:*",
-    "@tanstack/electric-db-collection": "workspace:*",
-    "@tanstack/offline-transactions": "workspace:*",
-    "@tanstack/powersync-db-collection": "workspace:*",
-    "@tanstack/query-db-collection": "workspace:*",
-    "@tanstack/react-db": "workspace:*",
-    "@tanstack/rxdb-db-collection": "workspace:*",
-    "@tanstack/solid-db": "workspace:*",
-    "@tanstack/svelte-db": "workspace:*",
-    "@tanstack/trailbase-db-collection": "workspace:*",
-    "@tanstack/vue-db": "workspace:*"
+    "disclearing-angular-db": "workspace:*",
+    "disclearing-db": "workspace:*",
+    "disclearing-db-ivm": "workspace:*",
+    "disclearing-electric-db-collection": "workspace:*",
+    "disclearing-offline-transactions": "workspace:*",
+    "disclearing-powersync-db-collection": "workspace:*",
+    "disclearing-query-db-collection": "workspace:*",
+    "disclearing-react-db": "workspace:*",
+    "disclearing-rxdb-db-collection": "workspace:*",
+    "disclearing-solid-db": "workspace:*",
+    "disclearing-svelte-db": "workspace:*",
+    "disclearing-trailbase-db-collection": "workspace:*",
+    "disclearing-vue-db": "workspace:*"
   },
   "dependencies": {
     "tsx": "^4.20.6"

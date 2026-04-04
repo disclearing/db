@@ -1,10 +1,10 @@
 {
-  "name": "@tanstack/trailbase-db-collection",
+  "name": "disclearing-trailbase-db-collection",
   "description": "TrailBase collection for TanStack DB",
   "version": "0.1.47",
   "dependencies": {
     "@standard-schema/spec": "^1.0.0",
-    "@tanstack/db": "workspace:*",
+    "disclearing-db": "workspace:*",
     "@tanstack/store": "^0.8.0",
     "debug": "^4.4.3",
     "trailbase": "^0.8.0"
@@ -40,10 +40,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/TanStack/db.git",
+    "url": "https://github.com/disclearing/db.git",
     "directory": "packages/trailbase-db-collection"
   },
-  "homepage": "https://tanstack.com/db",
+  "homepage": "https://disclearing.github.io/db",
   "keywords": [
     "trailbase",
     "sql",

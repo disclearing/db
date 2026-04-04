@@ -10,7 +10,7 @@ TrailBase collections provide seamless integration between TanStack DB and [Trai
 
 [TrailBase](https://trailbase.io) is an easy-to-self-host, single-executable application backend with built-in SQLite, a V8 JS runtime, auth, admin UIs and sync functionality.
 
-The `@tanstack/trailbase-db-collection` package allows you to create collections that:
+The `disclearing-trailbase-db-collection` package allows you to create collections that:
 - Automatically sync data from TrailBase Record APIs
 - Support real-time subscriptions when `enable_subscriptions` is enabled
 - Handle optimistic updates with automatic rollback on errors
@@ -19,14 +19,14 @@ The `@tanstack/trailbase-db-collection` package allows you to create collections
 ## Installation
 
 ```bash
-npm install @tanstack/trailbase-db-collection @tanstack/react-db trailbase
+npm install disclearing-trailbase-db-collection disclearing-react-db trailbase
 ```
 
 ## Basic Usage
 
 ```typescript
-import { createCollection } from '@tanstack/react-db'
-import { trailBaseCollectionOptions } from '@tanstack/trailbase-db-collection'
+import { createCollection } from 'disclearing-react-db'
+import { trailBaseCollectionOptions } from 'disclearing-trailbase-db-collection'
 import { initClient } from 'trailbase'
 
 const trailBaseClient = initClient(`https://your-trailbase-instance.com`)
@@ -147,8 +147,8 @@ const todosCollection = createCollection(
 ## Complete Example
 
 ```typescript
-import { createCollection } from '@tanstack/react-db'
-import { trailBaseCollectionOptions } from '@tanstack/trailbase-db-collection'
+import { createCollection } from 'disclearing-react-db'
+import { trailBaseCollectionOptions } from 'disclearing-trailbase-db-collection'
 import { initClient } from 'trailbase'
 import { z } from 'zod'
 

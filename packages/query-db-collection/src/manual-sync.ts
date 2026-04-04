@@ -5,7 +5,7 @@ import {
   UpdateOperationItemNotFoundError,
 } from "./errors"
 import type { QueryClient } from "@tanstack/query-core"
-import type { ChangeMessage, Collection } from "@tanstack/db"
+import type { ChangeMessage, Collection } from "disclearing-db"
 
 // Track active batch operations per context to prevent cross-collection contamination
 const activeBatchContexts = new WeakMap<

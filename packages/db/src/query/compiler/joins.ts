@@ -1,4 +1,4 @@
-import { filter, join as joinOperator, map, tap } from "@tanstack/db-ivm"
+import { filter, join as joinOperator, map, tap } from "disclearing-db-ivm"
 import {
   CollectionInputNotFoundError,
   InvalidJoinCondition,
@@ -24,7 +24,7 @@ import type {
   QueryIR,
   QueryRef,
 } from "../ir.js"
-import type { IStreamBuilder, JoinType } from "@tanstack/db-ivm"
+import type { IStreamBuilder, JoinType } from "disclearing-db-ivm"
 import type { Collection } from "../../collection/index.js"
 import type {
   KeyedStream,

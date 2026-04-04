@@ -15,7 +15,11 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "paths": {
+      "disclearing-db": ["../db/dist/esm"],
+      "disclearing-db-ivm": ["../db-ivm/dist/esm"]
+    }
   },
   "include": ["src", "tests", "vite.config.ts"],
   "exclude": ["node_modules", "dist"]

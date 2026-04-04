@@ -1,10 +1,10 @@
 {
-  "name": "@tanstack/powersync-db-collection",
+  "name": "disclearing-powersync-db-collection",
   "description": "PowerSync collection for TanStack DB",
   "version": "0.1.7",
   "dependencies": {
     "@standard-schema/spec": "^1.0.0",
-    "@tanstack/db": "workspace:*",
+    "disclearing-db": "workspace:*",
     "@tanstack/store": "^0.8.0",
     "debug": "^4.4.3",
     "p-defer": "^4.0.1"
@@ -42,10 +42,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/TanStack/db.git",
+    "url": "https://github.com/disclearing/db.git",
     "directory": "packages/powersync-db-collection"
   },
-  "homepage": "https://tanstack.com/db",
+  "homepage": "https://disclearing.github.io/db",
   "keywords": [
     "powersync",
     "realtime",

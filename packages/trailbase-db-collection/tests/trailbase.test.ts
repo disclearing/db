@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from "vitest"
-import { createCollection } from "@tanstack/db"
+import { createCollection } from "disclearing-db"
 import { trailBaseCollectionOptions } from "../src/trailbase"
 import type {
   Event,

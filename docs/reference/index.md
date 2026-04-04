@@ -1,6 +1,6 @@
 ---
-id: "@tanstack/db"
-title: "@tanstack/db"
+id: "disclearing-db"
+title: "disclearing-db"
 ---
 
 # @tanstack/db

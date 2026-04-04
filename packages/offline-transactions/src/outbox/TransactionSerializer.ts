@@ -4,7 +4,7 @@ import type {
   SerializedMutation,
   SerializedOfflineTransaction,
 } from "../types"
-import type { Collection, PendingMutation } from "@tanstack/db"
+import type { Collection, PendingMutation } from "disclearing-db"
 
 export class TransactionSerializer {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any

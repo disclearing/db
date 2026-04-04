@@ -1,9 +1,9 @@
 ---
-id: "@tanstack/react-db"
-title: "@tanstack/react-db"
+id: "disclearing-react-db"
+title: "disclearing-react-db"
 ---
 
-# @tanstack/react-db
+# disclearing-react-db
 
 ## Type Aliases
 

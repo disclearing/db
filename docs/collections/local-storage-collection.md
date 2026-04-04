@@ -20,14 +20,14 @@ The `localStorageCollectionOptions` allows you to create collections that:
 LocalStorage collections are included in the core TanStack DB package:
 
 ```bash
-npm install @tanstack/react-db
+npm install disclearing-react-db
 ```
 
 ## Basic Usage
 
 ```typescript
-import { createCollection } from '@tanstack/react-db'
-import { localStorageCollectionOptions } from '@tanstack/react-db'
+import { createCollection } from 'disclearing-react-db'
+import { localStorageCollectionOptions } from 'disclearing-react-db'
 
 const userPreferencesCollection = createCollection(
   localStorageCollectionOptions({
@@ -189,7 +189,7 @@ const preferencesCollection = createCollection(
 When using LocalStorage collections with manual transactions (created via `createTransaction`), you must call `utils.acceptMutations()` to persist the changes:
 
 ```typescript
-import { createTransaction } from '@tanstack/react-db'
+import { createTransaction } from 'disclearing-react-db'
 
 const localData = createCollection(
   localStorageCollectionOptions({
@@ -236,9 +236,9 @@ await tx.commit()
 ## Complete Example
 
 ```typescript
-import { createCollection } from '@tanstack/react-db'
-import { localStorageCollectionOptions } from '@tanstack/react-db'
-import { useLiveQuery } from '@tanstack/react-db'
+import { createCollection } from 'disclearing-react-db'
+import { localStorageCollectionOptions } from 'disclearing-react-db'
+import { useLiveQuery } from 'disclearing-react-db'
 import { z } from 'zod'
 
 // Define schema

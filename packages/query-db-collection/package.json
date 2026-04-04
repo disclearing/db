@@ -1,12 +1,12 @@
 {
-  "name": "@tanstack/query-db-collection",
+  "name": "disclearing-query-db-collection",
   "description": "TanStack Query collection for TanStack DB",
   "version": "1.0.2",
   "dependencies": {
     "@standard-schema/spec": "^1.0.0"
   },
   "devDependencies": {
-    "@tanstack/db": "workspace:*",
+    "disclearing-db": "workspace:*",
     "@tanstack/query-core": "^5.90.10",
     "@vitest/coverage-istanbul": "^3.2.4"
   },
@@ -31,7 +31,7 @@
   "module": "dist/esm/index.js",
   "packageManager": "pnpm@10.22.0",
   "peerDependencies": {
-    "@tanstack/db": "*",
+    "disclearing-db": "*",
     "@tanstack/query-core": "^5.0.0",
     "typescript": ">=4.7"
   },
@@ -39,10 +39,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/TanStack/db.git",
+    "url": "https://github.com/disclearing/db.git",
     "directory": "packages/query-db-collection"
   },
-  "homepage": "https://tanstack.com/db",
+  "homepage": "https://disclearing.github.io/db",
   "keywords": [
     "query",
     "tanstack",

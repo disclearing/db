@@ -5,10 +5,10 @@ import {
   eq,
   gt,
   lt,
-} from "@tanstack/db"
+} from "disclearing-db"
 import { electricCollectionOptions } from "../src/electric"
 import type { ElectricCollectionUtils } from "../src/electric"
-import type { Collection } from "@tanstack/db"
+import type { Collection } from "disclearing-db"
 import type { Message } from "@electric-sql/client"
 import type { StandardSchemaV1 } from "@standard-schema/spec"
 

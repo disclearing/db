@@ -6,7 +6,7 @@ id: adapter
 ## Installation
 
 ```sh
-npm install @tanstack/vue-db
+npm install disclearing-vue-db
 ```
 
 ## Vue Composables
@@ -23,7 +23,7 @@ The `useLiveQuery` composable creates a live query that automatically updates yo
 
 ```vue
 <script setup>
-import { useLiveQuery } from '@tanstack/vue-db'
+import { useLiveQuery } from 'disclearing-vue-db'
 import { eq } from '@tanstack/db'
 
 const { data, isLoading } = useLiveQuery((q) =>
@@ -54,7 +54,7 @@ Use dependency arrays when your query depends on external reactive values (refs,
 ```vue
 <script setup>
 import { ref } from 'vue'
-import { useLiveQuery } from '@tanstack/vue-db'
+import { useLiveQuery } from 'disclearing-vue-db'
 import { gt } from '@tanstack/db'
 
 const minPriority = ref(5)
@@ -88,7 +88,7 @@ When a dependency value changes:
 ```vue
 <script setup>
 import { ref } from 'vue'
-import { useLiveQuery } from '@tanstack/vue-db'
+import { useLiveQuery } from 'disclearing-vue-db'
 import { eq, and } from '@tanstack/db'
 
 const userId = ref(1)
@@ -122,7 +122,7 @@ const { data: badData } = useLiveQuery(
 ```vue
 <script setup>
 import { toRef } from 'vue'
-import { useLiveQuery } from '@tanstack/vue-db'
+import { useLiveQuery } from 'disclearing-vue-db'
 import { eq } from '@tanstack/db'
 
 const props = defineProps<{ userId: number }>()
@@ -152,7 +152,7 @@ const { data: data2 } = useLiveQuery(
 
 ```vue
 <script setup>
-import { useLiveQuery } from '@tanstack/vue-db'
+import { useLiveQuery } from 'disclearing-vue-db'
 
 // No external dependencies - query never changes
 const { data } = useLiveQuery(
@@ -170,7 +170,7 @@ const { data } = useLiveQuery(
 
 ```vue
 <script setup>
-import { useLiveQuery } from '@tanstack/vue-db'
+import { useLiveQuery } from 'disclearing-vue-db'
 
 // Same as above - no deps needed
 const { data } = useLiveQuery(
@@ -191,7 +191,7 @@ You can also pass an existing collection to `useLiveQuery`. This is useful for s
 <script setup>
 import { ref } from 'vue'
 import { createLiveQueryCollection } from '@tanstack/db'
-import { useLiveQuery } from '@tanstack/vue-db'
+import { useLiveQuery } from 'disclearing-vue-db'
 import { eq } from '@tanstack/db'
 
 // Create collection outside component or in a composable

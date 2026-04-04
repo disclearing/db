@@ -1,15 +1,15 @@
-# @tanstack/firebase-db-collection
+# disclearing-firebase-db-collection
 
 Firebase/Firestore collection integration for TanStack DB, providing real-time synchronization with Firestore databases.
 
 ## Installation
 
 ```bash
-npm install @tanstack/firebase-db-collection firebase
+npm install disclearing-firebase-db-collection firebase
 # or
-yarn add @tanstack/firebase-db-collection firebase
+yarn add disclearing-firebase-db-collection firebase
 # or
-pnpm add @tanstack/firebase-db-collection firebase
+pnpm add disclearing-firebase-db-collection firebase
 ```
 
 ## Features
@@ -25,8 +25,8 @@ pnpm add @tanstack/firebase-db-collection firebase
 ## Basic Usage
 
 ```typescript
-import { createCollection } from "@tanstack/db"
-import { firebaseCollectionOptions } from "@tanstack/firebase-db-collection"
+import { createCollection } from "disclearing-db"
+import { firebaseCollectionOptions } from "disclearing-firebase-db-collection"
 import { initializeApp } from "firebase/app"
 import { getFirestore } from "firebase/firestore"
 
@@ -293,7 +293,7 @@ import {
   ExpectedUpdateTypeError,
   ExpectedDeleteTypeError,
   TimeoutWaitingForIdsError,
-} from "@tanstack/firebase-db-collection"
+} from "disclearing-firebase-db-collection"
 
 try {
   await collection.insert(item)

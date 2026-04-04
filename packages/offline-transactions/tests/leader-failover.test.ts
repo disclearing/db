@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest"
 import { FakeStorageAdapter, createTestOfflineEnvironment } from "./harness"
 import type { TestItem } from "./harness"
-import type { PendingMutation } from "@tanstack/db"
+import type { PendingMutation } from "disclearing-db"
 
 const flushMicrotasks = () => new Promise((resolve) => setTimeout(resolve, 0))
 

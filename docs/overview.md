@@ -254,9 +254,9 @@ The collection will use the schema for its type inference. If you provide a sche
 
 #### Creating Custom Collection Types
 
-You can create your own collection types by implementing the `Collection` interface found in [`../packages/db/src/collection/index.ts`](https://github.com/TanStack/db/blob/main/packages/db/src/collection/index.ts).
+You can create your own collection types by implementing the `Collection` interface found in [`../packages/db/src/collection/index.ts`](https://github.com/disclearing/db/blob/main/packages/db/src/collection/index.ts).
 
-See the existing implementations in [`../packages/db`](https://github.com/TanStack/db/tree/main/packages/db), [`../packages/query-db-collection`](https://github.com/TanStack/db/tree/main/packages/query-db-collection), [`../packages/electric-db-collection`](https://github.com/TanStack/db/tree/main/packages/electric-db-collection) and [`../packages/trailbase-db-collection`](https://github.com/TanStack/db/tree/main/packages/trailbase-db-collection) for reference. Also see the [Collection Options Creator guide](../guides/collection-options-creator.md) for a pattern to create reusable collection configuration factories.
+See the existing implementations in [`../packages/db`](https://github.com/disclearing/db/tree/main/packages/db), [`../packages/query-db-collection`](https://github.com/disclearing/db/tree/main/packages/query-db-collection), [`../packages/electric-db-collection`](https://github.com/disclearing/db/tree/main/packages/electric-db-collection) and [`../packages/trailbase-db-collection`](https://github.com/disclearing/db/tree/main/packages/trailbase-db-collection) for reference. Also see the [Collection Options Creator guide](../guides/collection-options-creator.md) for a pattern to create reusable collection configuration factories.
 
 ### Live queries
 
@@ -265,7 +265,7 @@ See the existing implementations in [`../packages/db`](https://github.com/TanSta
 Use the `useLiveQuery` hook to assign live query results to a state variable in your React components:
 
 ```ts
-import { useLiveQuery } from '@tanstack/react-db'
+import { useLiveQuery } from 'disclearing-react-db'
 import { eq } from '@tanstack/db'
 
 const Todos = () => {
@@ -287,7 +287,7 @@ const Todos = () => {
 You can also query across collections with joins:
 
 ```ts
-import { useLiveQuery } from '@tanstack/react-db'
+import { useLiveQuery } from 'disclearing-react-db'
 import { eq } from '@tanstack/db'
 
 const Todos = () => {
@@ -316,7 +316,7 @@ const Todos = () => {
 For React Suspense support, use `useLiveSuspenseQuery`. This hook suspends rendering during initial data load and guarantees that `data` is always defined:
 
 ```tsx
-import { useLiveSuspenseQuery } from '@tanstack/react-db'
+import { useLiveSuspenseQuery } from 'disclearing-react-db'
 import { Suspense } from 'react'
 
 const Todos = () => {
@@ -344,7 +344,7 @@ See the [React Suspense section in Live Queries](../guides/live-queries#using-wi
 You can also build queries directly (outside of the component lifecycle) using the underlying `queryBuilder` API:
 
 ```ts
-import { createLiveQueryCollection, eq } from "@tanstack/db"
+import { createLiveQueryCollection, eq } from "disclearing-db"
 
 const completedTodos = createLiveQueryCollection({
   startSync: true,
@@ -397,8 +397,8 @@ The steps are to:
 2. implement mutation handlers that handle mutations by posting them to your API endpoints
 
 ```tsx
-import { useLiveQuery, createCollection } from "@tanstack/react-db"
-import { queryCollectionOptions } from "@tanstack/query-db-collection"
+import { useLiveQuery, createCollection } from "disclearing-react-db"
+import { queryCollectionOptions } from "disclearing-query-db-collection"
 
 // Load data into collections using TanStack Query.
 // It's common to define these in a `collections` module.
@@ -476,13 +476,13 @@ This pattern enables the "load everything once" approach that makes apps like Li
 Here, we illustrate this pattern using [ElectricSQL](https://electric-sql.com) as the sync engine.
 
 ```tsx
-import type { Collection } from "@tanstack/db"
+import type { Collection } from "disclearing-db"
 import type {
   MutationFn,
   PendingMutation,
   createCollection,
-} from "@tanstack/react-db"
-import { electricCollectionOptions } from "@tanstack/electric-db-collection"
+} from "disclearing-react-db"
+import { electricCollectionOptions } from "disclearing-electric-db-collection"
 
 export const todoCollection = createCollection(
   electricCollectionOptions({

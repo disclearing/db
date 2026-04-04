@@ -5,7 +5,7 @@ title: OnlyOneSourceAllowedError
 
 # Class: OnlyOneSourceAllowedError
 
-Defined in: [packages/db/src/errors.ts:343](https://github.com/TanStack/db/blob/main/packages/db/src/errors.ts#L343)
+Defined in: [packages/db/src/errors.ts:343](https://github.com/disclearing/db/blob/main/packages/db/src/errors.ts#L343)
 
 ## Extends
 
@@ -19,7 +19,7 @@ Defined in: [packages/db/src/errors.ts:343](https://github.com/TanStack/db/blob/
 new OnlyOneSourceAllowedError(context): OnlyOneSourceAllowedError;
 ```
 
-Defined in: [packages/db/src/errors.ts:344](https://github.com/TanStack/db/blob/main/packages/db/src/errors.ts#L344)
+Defined in: [packages/db/src/errors.ts:344](https://github.com/disclearing/db/blob/main/packages/db/src/errors.ts#L344)
 
 #### Parameters
 

@@ -119,7 +119,7 @@ const activeUsers = createLiveQueryCollection((q) =>
 In React, you can use the `useLiveQuery` hook:
 
 ```tsx
-import { useLiveQuery } from '@tanstack/react-db'
+import { useLiveQuery } from 'disclearing-react-db'
 
 function UserList() {
   const activeUsers = useLiveQuery((q) =>
@@ -142,7 +142,7 @@ In Angular, you can use the `injectLiveQuery` function:
 
 ```typescript
 import { Component } from '@angular/core'
-import { injectLiveQuery } from '@tanstack/angular-db'
+import { injectLiveQuery } from 'disclearing-angular-db'
 
 @Component({
   selector: 'user-list',
@@ -170,7 +170,7 @@ For more details on framework integration, see the [React](../../framework/react
 For React applications, you can use the `useLiveSuspenseQuery` hook to integrate with React Suspense boundaries. This hook suspends rendering while data loads initially, then streams updates without re-suspending.
 
 ```tsx
-import { useLiveSuspenseQuery } from '@tanstack/react-db'
+import { useLiveSuspenseQuery } from 'disclearing-react-db'
 import { Suspense } from 'react'
 
 function UserList() {
@@ -345,7 +345,7 @@ function UserList() {
 In React, you can conditionally disable a query by returning `undefined` or `null` from the `useLiveQuery` callback. When disabled, the hook returns a special state indicating the query is not active.
 
 ```tsx
-import { useLiveQuery } from '@tanstack/react-db'
+import { useLiveQuery } from 'disclearing-react-db'
 
 function TodoList({ userId }: { userId?: string }) {
   const { data, isEnabled, status } = useLiveQuery((q) => {
@@ -718,7 +718,7 @@ The result type of a join will take into account the join type, with the optiona
 
 > [!NOTE]
 > We are working on an `include` system that will enable joins that project to a hierarchical object. For example an `issue` row could have a `comments` property that is an array of `comment` rows.
-> See [this issue](https://github.com/TanStack/db/issues/288) for more details.
+> See [this issue](https://github.com/disclearing/db/issues/288) for more details.
 
 ### Method Signature
 
@@ -1200,7 +1200,7 @@ const user = createLiveQueryCollection((q) =>
 Use `findOne` with `useLiveQuery` to get a single record:
 
 ```tsx
-import { useLiveQuery } from '@tanstack/react-db'
+import { useLiveQuery } from 'disclearing-react-db'
 import { eq } from '@tanstack/db'
 
 function UserProfile({ userId }: { userId: string }) {

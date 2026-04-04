@@ -7,7 +7,7 @@ import {
   onCleanup,
 } from "solid-js"
 import { ReactiveMap } from "@solid-primitives/map"
-import { CollectionImpl, createLiveQueryCollection } from "@tanstack/db"
+import { CollectionImpl, createLiveQueryCollection } from "disclearing-db"
 import { createStore, reconcile } from "solid-js/store"
 import type { Accessor } from "solid-js"
 import type {
@@ -19,7 +19,7 @@ import type {
   InitialQueryBuilder,
   LiveQueryCollectionConfig,
   QueryBuilder,
-} from "@tanstack/db"
+} from "disclearing-db"
 
 /**
  * Create a live query using a query function

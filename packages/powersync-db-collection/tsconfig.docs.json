@@ -2,7 +2,7 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "paths": {
-      "@tanstack/db": ["../db/src"]
+      "disclearing-db": ["../db/src"]
     }
   },
   "include": ["src"]

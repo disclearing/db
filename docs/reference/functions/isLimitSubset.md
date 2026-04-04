@@ -9,7 +9,7 @@ title: isLimitSubset
 function isLimitSubset(subset, superset): boolean;
 ```
 
-Defined in: [packages/db/src/query/predicate-utils.ts:768](https://github.com/TanStack/db/blob/main/packages/db/src/query/predicate-utils.ts#L768)
+Defined in: [packages/db/src/query/predicate-utils.ts:768](https://github.com/disclearing/db/blob/main/packages/db/src/query/predicate-utils.ts#L768)
 
 Check if one limit is a subset of another.
 Returns true if the subset limit requirements are satisfied by the superset limit.

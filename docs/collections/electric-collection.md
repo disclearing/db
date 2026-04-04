@@ -8,7 +8,7 @@ Electric collections provide seamless integration between TanStack DB and Electr
 
 ## Overview
 
-The `@tanstack/electric-db-collection` package allows you to create collections that:
+The `disclearing-electric-db-collection` package allows you to create collections that:
 - Automatically sync data from Postgres via Electric shapes
 - Support optimistic updates with transaction matching and automatic rollback on errors
 - Handle persistence through customizable mutation handlers
@@ -16,14 +16,14 @@ The `@tanstack/electric-db-collection` package allows you to create collections 
 ## Installation
 
 ```bash
-npm install @tanstack/electric-db-collection @tanstack/react-db
+npm install disclearing-electric-db-collection disclearing-react-db
 ```
 
 ## Basic Usage
 
 ```typescript
-import { createCollection } from '@tanstack/react-db'
-import { electricCollectionOptions } from '@tanstack/electric-db-collection'
+import { createCollection } from 'disclearing-react-db'
+import { electricCollectionOptions } from 'disclearing-electric-db-collection'
 
 const todosCollection = createCollection(
   electricCollectionOptions({
@@ -107,7 +107,7 @@ const todosCollection = createCollection(
 For cases where txids aren't available, use the `awaitMatch` utility function to wait for synchronization with custom matching logic:
 
 ```typescript
-import { isChangeMessage } from '@tanstack/electric-db-collection'
+import { isChangeMessage } from 'disclearing-electric-db-collection'
 
 const todosCollection = createCollection(
   electricCollectionOptions({
@@ -269,7 +269,7 @@ const addTodoAction = createOptimisticAction({
 ### Using Custom Match Function
 
 ```typescript
-import { isChangeMessage } from '@tanstack/electric-db-collection'
+import { isChangeMessage } from 'disclearing-electric-db-collection'
 
 const addTodoAction = createOptimisticAction({
   onMutate: ({ text }) => {
@@ -322,7 +322,7 @@ This is useful when you need to ensure a mutation has been synchronized before p
 Manually wait for a custom match function to find a matching message:
 
 ```typescript
-import { isChangeMessage } from '@tanstack/electric-db-collection'
+import { isChangeMessage } from 'disclearing-electric-db-collection'
 
 // Wait for a specific message pattern
 await todosCollection.utils.awaitMatch(
@@ -343,7 +343,7 @@ The package exports helper functions for use in custom match functions:
 - `isControlMessage(message)`: Check if a message is a control message (up-to-date, must-refetch)
 
 ```typescript
-import { isChangeMessage, isControlMessage } from '@tanstack/electric-db-collection'
+import { isChangeMessage, isControlMessage } from 'disclearing-electric-db-collection'
 
 // Use in custom match functions
 const matchFn = (message) => {

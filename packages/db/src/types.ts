@@ -1,4 +1,4 @@
-import type { IStreamBuilder } from "@tanstack/db-ivm"
+import type { IStreamBuilder } from "disclearing-db-ivm"
 import type { Collection } from "./collection/index.js"
 import type { StandardSchemaV1 } from "@standard-schema/spec"
 import type { Transaction } from "./transactions"

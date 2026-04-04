@@ -3,7 +3,7 @@ import {
   CollectionImpl,
   createCollection,
   createTransaction,
-} from "@tanstack/db"
+} from "disclearing-db"
 import { electricCollectionOptions, isChangeMessage } from "../src/electric"
 import type { ElectricCollectionUtils } from "../src/electric"
 import type {
@@ -13,7 +13,7 @@ import type {
   PendingMutation,
   Transaction,
   TransactionWithMutations,
-} from "@tanstack/db"
+} from "disclearing-db"
 import type { Message, Row } from "@electric-sql/client"
 import type { StandardSchemaV1 } from "@standard-schema/spec"
 

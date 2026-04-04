@@ -6,7 +6,7 @@ import {
   createLiveQueryCollection,
   eq,
   gt,
-} from "@tanstack/db"
+} from "disclearing-db"
 import { injectLiveQuery } from "../src/index"
 import { mockSyncCollectionOptions } from "../../db/tests/utils"
 import type {
@@ -15,7 +15,7 @@ import type {
   Context,
   LiveQueryCollectionConfig,
   QueryBuilder,
-} from "@tanstack/db"
+} from "disclearing-db"
 
 // Import the same test utilities as Vue
 

@@ -2,7 +2,7 @@ import type {
   Collection,
   MutationFnParams,
   PendingMutation,
-} from "@tanstack/db"
+} from "disclearing-db"
 
 // Extended mutation function that includes idempotency key
 export type OfflineMutationFnParams<

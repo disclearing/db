@@ -6,7 +6,7 @@ id: adapter
 ## Installation
 
 ```sh
-npm install @tanstack/solid-db
+npm install disclearing-solid-db
 ```
 
 ## Solid Primitives
@@ -22,7 +22,7 @@ For comprehensive documentation on writing queries (filtering, joins, aggregatio
 The `useLiveQuery` primitive creates a live query that automatically updates your component when data changes. It returns an object where `data` is a plain array and status fields (e.g. `isLoading()`, `status()`) are accessors:
 
 ```tsx
-import { useLiveQuery } from '@tanstack/solid-db'
+import { useLiveQuery } from 'disclearing-solid-db'
 import { eq } from '@tanstack/db'
 import { Show, For } from 'solid-js'
 
@@ -53,7 +53,7 @@ Solid uses fine-grained reactivity, which means queries automatically track and 
 
 ```tsx
 import { createSignal } from 'solid-js'
-import { useLiveQuery } from '@tanstack/solid-db'
+import { useLiveQuery } from 'disclearing-solid-db'
 import { gt } from '@tanstack/db'
 
 function FilteredTodos(props: { minPriority: number }) {
@@ -76,7 +76,7 @@ When `props.minPriority` changes, Solid's reactivity system automatically:
 
 ```tsx
 import { createSignal } from 'solid-js'
-import { useLiveQuery } from '@tanstack/solid-db'
+import { useLiveQuery } from 'disclearing-solid-db'
 import { eq, and } from '@tanstack/db'
 
 function TodoList() {
@@ -112,7 +112,7 @@ function TodoList() {
 
 ```tsx
 import { createSignal } from 'solid-js'
-import { useLiveQuery } from '@tanstack/solid-db'
+import { useLiveQuery } from 'disclearing-solid-db'
 import { gt } from '@tanstack/db'
 
 function TodoList() {
@@ -133,7 +133,7 @@ function TodoList() {
 
 ```tsx
 import { createSignal } from 'solid-js'
-import { useLiveQuery } from '@tanstack/solid-db'
+import { useLiveQuery } from 'disclearing-solid-db'
 import { gt } from '@tanstack/db'
 
 function TodoList() {
@@ -154,7 +154,7 @@ function TodoList() {
 **Static queries need no special handling:**
 
 ```tsx
-import { useLiveQuery } from '@tanstack/solid-db'
+import { useLiveQuery } from 'disclearing-solid-db'
 
 function AllTodos() {
   // No signals accessed - query never changes
@@ -172,7 +172,7 @@ You can also pass an existing collection to `useLiveQuery`. This is useful for s
 
 ```tsx
 import { createLiveQueryCollection } from '@tanstack/db'
-import { useLiveQuery } from '@tanstack/solid-db'
+import { useLiveQuery } from 'disclearing-solid-db'
 
 // Create collection outside component
 const todosQuery = createLiveQueryCollection((q) =>

@@ -8,7 +8,7 @@ import {
   createOptimisticAction,
   eq,
   gt,
-} from "@tanstack/db"
+} from "disclearing-db"
 import { createComputed, createRoot, createSignal } from "solid-js"
 import { useLiveQuery } from "../src/useLiveQuery"
 import { mockSyncCollectionOptions } from "../../db/tests/utils"

@@ -17,7 +17,7 @@ import type {
   SyncConfig,
   UpdateMutationFnParams,
   UtilsRecord,
-} from "@tanstack/db"
+} from "disclearing-db"
 import type {
   FetchStatus,
   QueryClient,
@@ -779,8 +779,8 @@ export function queryCollectionOptions(
             newItemsArray.some((item) => typeof item !== `object`)
           ) {
             const errorMessage = select
-              ? `@tanstack/query-db-collection: select() must return an array of objects. Got: ${typeof newItemsArray} for queryKey ${JSON.stringify(queryKey)}`
-              : `@tanstack/query-db-collection: queryFn must return an array of objects. Got: ${typeof newItemsArray} for queryKey ${JSON.stringify(queryKey)}`
+              ? `disclearing-query-db-collection: select() must return an array of objects. Got: ${typeof newItemsArray} for queryKey ${JSON.stringify(queryKey)}`
+              : `disclearing-query-db-collection: queryFn must return an array of objects. Got: ${typeof newItemsArray} for queryKey ${JSON.stringify(queryKey)}`
 
             console.error(errorMessage)
             return

@@ -1,7 +1,7 @@
 import { withSpan } from "../telemetry/tracer"
 import { TransactionSerializer } from "./TransactionSerializer"
 import type { OfflineTransaction, StorageAdapter } from "../types"
-import type { Collection } from "@tanstack/db"
+import type { Collection } from "disclearing-db"
 
 export class OutboxManager {
   private storage: StorageAdapter

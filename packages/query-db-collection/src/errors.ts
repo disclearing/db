@@ -1,4 +1,4 @@
-import { TanStackDBError } from "@tanstack/db"
+import { TanStackDBError } from "disclearing-db"
 
 // Query Collection Errors
 export class QueryCollectionError extends TanStackDBError {

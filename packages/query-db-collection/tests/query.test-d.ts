@@ -6,7 +6,7 @@ import {
   eq,
   gt,
   parseLoadSubsetOptions,
-} from "@tanstack/db"
+} from "disclearing-db"
 import { QueryClient } from "@tanstack/query-core"
 import { z } from "zod"
 import { queryCollectionOptions } from "../src/query"
@@ -16,7 +16,7 @@ import type {
   InsertMutationFnParams,
   LoadSubsetOptions,
   UpdateMutationFnParams,
-} from "@tanstack/db"
+} from "disclearing-db"
 
 describe(`Query collection type resolution tests`, () => {
   // Define test types

@@ -62,7 +62,7 @@ export default defineConfig({
     },
   },
   optimizeDeps: {
-    exclude: [`@tanstack/db`, `@tanstack/offline-transactions`],
+    exclude: [`@tanstack/db`, `disclearing-offline-transactions`],
   },
   plugins: [
     watchWorkspacePackages(),

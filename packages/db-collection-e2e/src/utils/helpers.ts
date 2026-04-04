@@ -1,4 +1,4 @@
-import type { Collection } from "@tanstack/db"
+import type { Collection } from "disclearing-db"
 
 /**
  * Wait for a condition to be true with timeout

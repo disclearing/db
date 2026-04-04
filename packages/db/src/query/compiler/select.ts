@@ -1,4 +1,4 @@
-import { map } from "@tanstack/db-ivm"
+import { map } from "disclearing-db-ivm"
 import { PropRef, Value as ValClass, isExpressionLike } from "../ir.js"
 import { AggregateNotSupportedError } from "../../errors.js"
 import { compileExpression } from "./evaluators.js"

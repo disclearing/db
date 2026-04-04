@@ -1,8 +1,8 @@
 import React, { useState } from "react"
 import { Link } from "@tanstack/react-router"
-import { debounceStrategy, usePacedMutations } from "@tanstack/react-db"
+import { debounceStrategy, usePacedMutations } from "disclearing-react-db"
 import type { FormEvent } from "react"
-import type { Collection, Transaction } from "@tanstack/react-db"
+import type { Collection, Transaction } from "disclearing-react-db"
 
 import type { SelectConfig, SelectTodo } from "@/db/validation"
 import { getComplementaryColor } from "@/lib/color"

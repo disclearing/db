@@ -3,7 +3,7 @@ import { NonRetriableError } from "../src/types"
 import { FakeStorageAdapter, createTestOfflineEnvironment } from "./harness"
 import type { TestItem } from "./harness"
 import type { OfflineMutationFnParams } from "../src/types"
-import type { PendingMutation } from "@tanstack/db"
+import type { PendingMutation } from "disclearing-db"
 
 const flushMicrotasks = () => new Promise((resolve) => setTimeout(resolve, 0))
 

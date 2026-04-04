@@ -467,7 +467,7 @@ onUpdate: async ({ transaction }) => {
 You can define a single mutation function for your entire app:
 
 ```typescript
-import type { MutationFn } from "@tanstack/react-db"
+import type { MutationFn } from "disclearing-react-db"
 
 const mutationFn: MutationFn = async ({ transaction }) => {
   const response = await api.mutations.batch(transaction.mutations)
@@ -538,7 +538,7 @@ For more complex mutation patterns, use `createOptimisticAction` to create custo
 Create an action that combines mutation logic with persistence:
 
 ```tsx
-import { createOptimisticAction } from "@tanstack/react-db"
+import { createOptimisticAction } from "disclearing-react-db"
 
 const addTodo = createOptimisticAction<string>({
   onMutate: (text) => {
@@ -579,7 +579,7 @@ const Todo = () => {
 For better type safety and runtime validation, you can use schema validation libraries like Zod, Valibot, or others. Here's an example using Zod:
 
 ```tsx
-import { createOptimisticAction } from "@tanstack/react-db"
+import { createOptimisticAction } from "disclearing-react-db"
 import { z } from "zod"
 
 // Define a schema for the action parameters
@@ -714,7 +714,7 @@ For maximum control over transaction lifecycles, create transactions manually us
 ### Basic Manual Transaction
 
 ```ts
-import { createTransaction } from "@tanstack/react-db"
+import { createTransaction } from "disclearing-react-db"
 
 const addTodoTx = createTransaction({
   autoCommit: false,
@@ -836,8 +836,8 @@ Local collections (LocalOnly and LocalStorage) don't participate in the standard
 #### Basic Usage
 
 ```ts
-import { createTransaction } from "@tanstack/react-db"
-import { localOnlyCollectionOptions } from "@tanstack/react-db"
+import { createTransaction } from "disclearing-react-db"
+import { localOnlyCollectionOptions } from "disclearing-react-db"
 
 const formDraft = createCollection(
   localOnlyCollectionOptions({
@@ -1008,7 +1008,7 @@ The fundamental difference between strategies is how they handle transactions:
 The debounce strategy waits for a period of inactivity before persisting. This is perfect for auto-save scenarios where you want to wait until the user stops typing before saving their work.
 
 ```tsx
-import { usePacedMutations, debounceStrategy } from "@tanstack/react-db"
+import { usePacedMutations, debounceStrategy } from "disclearing-react-db"
 
 function AutoSaveForm({ formId }: { formId: string }) {
   const mutate = usePacedMutations<{ field: string; value: string }>({
@@ -1050,7 +1050,7 @@ function AutoSaveForm({ formId }: { formId: string }) {
 The throttle strategy ensures a minimum spacing between executions. This is ideal for scenarios like sliders or progress updates where you want smooth, consistent updates without overwhelming your backend.
 
 ```tsx
-import { usePacedMutations, throttleStrategy } from "@tanstack/react-db"
+import { usePacedMutations, throttleStrategy } from "disclearing-react-db"
 
 function VolumeSlider() {
   const mutate = usePacedMutations<number>({
@@ -1096,7 +1096,7 @@ function VolumeSlider() {
 The queue strategy creates a separate transaction for each mutation and processes them sequentially in order. Unlike debounce/throttle, **every mutation is guaranteed to persist**, making it ideal for workflows where you can't lose any operations.
 
 ```tsx
-import { usePacedMutations, queueStrategy } from "@tanstack/react-db"
+import { usePacedMutations, queueStrategy } from "disclearing-react-db"
 
 function FileUploader() {
   const mutate = usePacedMutations<File>({
@@ -1167,7 +1167,7 @@ Use this guide to pick the right strategy for your use case:
 The `usePacedMutations` hook makes it easy to use paced mutations in React components:
 
 ```tsx
-import { usePacedMutations, debounceStrategy } from "@tanstack/react-db"
+import { usePacedMutations, debounceStrategy } from "disclearing-react-db"
 
 function MyComponent({ itemId }: { itemId: string }) {
   const mutate = usePacedMutations<number>({
@@ -1203,7 +1203,7 @@ function MyComponent({ itemId }: { itemId: string }) {
 The hook automatically memoizes the strategy and mutation function to prevent unnecessary recreations. You can also use `createPacedMutations` directly outside of React:
 
 ```ts
-import { createPacedMutations, queueStrategy } from "@tanstack/db"
+import { createPacedMutations, queueStrategy } from "disclearing-db"
 
 const mutate = createPacedMutations<{ id: string; changes: Partial<Item> }>({
   onMutate: ({ id, changes }) => {
@@ -1270,7 +1270,7 @@ In this example, mutations from `EmailDraftEditor1` and `EmailDraftEditor2` will
 
 ```tsx
 // Create a single shared instance
-import { createPacedMutations, debounceStrategy } from "@tanstack/db"
+import { createPacedMutations, debounceStrategy } from "disclearing-db"
 
 export const mutateDraft = createPacedMutations<{ draftId: string; text: string }>({
   onMutate: ({ draftId, text }) => {
@@ -1619,4 +1619,4 @@ This pattern maintains a stable key throughout the temporary → real ID transit
 4. **Maintain view key mappings**: Create a mapping between IDs and stable view keys for rendering
 
 > [!NOTE]
-> There's an [open issue](https://github.com/TanStack/db/issues/19) to add better built-in support for temporary ID handling in TanStack DB. This would automate the view key pattern and make it easier to work with server-generated IDs.
+> There's an [open issue](https://github.com/disclearing/db/issues/19) to add better built-in support for temporary ID handling in TanStack DB. This would automate the view key pattern and make it easier to work with server-generated IDs.

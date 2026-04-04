@@ -180,8 +180,8 @@ Built on a TypeScript implementation of differential dataflow, TanStack DB provi
 This example uses Query Collections for server-state synchronization with tRPC:
 
 ```tsx
-import { createCollection } from "@tanstack/react-db"
-import { queryCollectionOptions } from "@tanstack/query-db-collection"
+import { createCollection } from "disclearing-react-db"
+import { queryCollectionOptions } from "disclearing-query-db-collection"
 import { QueryClient } from "@tanstack/query-core"
 
 const queryClient = new QueryClient()
@@ -238,7 +238,7 @@ const AddTodo = () => {
 Use live queries to read data reactively across collections:
 
 ```tsx
-import { useLiveQuery } from "@tanstack/react-db"
+import { useLiveQuery } from "disclearing-react-db"
 
 const Todos = () => {
   // Read data using live queries with cross-collection joins
@@ -268,7 +268,7 @@ const Todos = () => {
 
 This pattern provides blazing fast, cross-collection live queries and local optimistic mutations with automatically managed optimistic state, all synced with your backend via tRPC.
 
-You can learn more about TanStack DB in the [TanStack DB documentation](https://tanstack.com/db/latest/docs/overview).
+You can learn more about TanStack DB in the [TanStack DB documentation](https://disclearing.github.io/db/latest/docs/overview).
 
 # Learn More
 

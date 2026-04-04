@@ -1,6 +1,6 @@
 import { serialize } from "./pg-serializer"
 import type { SubsetParams } from "@electric-sql/client"
-import type { IR, LoadSubsetOptions } from "@tanstack/db"
+import type { IR, LoadSubsetOptions } from "disclearing-db"
 
 export type CompiledSqlRecord = Omit<SubsetParams, `params`> & {
   params?: Array<unknown>

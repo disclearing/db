@@ -1,9 +1,9 @@
 ---
-id: "@tanstack/electric-db-collection"
-title: "@tanstack/electric-db-collection"
+id: "disclearing-electric-db-collection"
+title: "disclearing-electric-db-collection"
 ---
 
-# @tanstack/electric-db-collection
+# disclearing-electric-db-collection
 
 ## Classes
 

@@ -1,7 +1,7 @@
 import { randomUUID } from "node:crypto"
 import { tmpdir } from "node:os"
 import { PowerSyncDatabase, Schema, Table, column } from "@powersync/node"
-import { SchemaValidationError, createCollection } from "@tanstack/db"
+import { SchemaValidationError, createCollection } from "disclearing-db"
 import { describe, expect, it, onTestFinished, vi } from "vitest"
 import { z } from "zod"
 import { powerSyncCollectionOptions } from "../src"

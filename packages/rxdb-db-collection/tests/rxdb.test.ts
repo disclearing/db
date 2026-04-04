@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest"
-import { createCollection } from "@tanstack/db"
+import { createCollection } from "disclearing-db"
 import {
   addRxPlugin,
   createRxDatabase,

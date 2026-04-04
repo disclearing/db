@@ -5,7 +5,7 @@ title: TanStackDBError
 
 # Class: TanStackDBError
 
-Defined in: [packages/db/src/errors.ts:2](https://github.com/TanStack/db/blob/main/packages/db/src/errors.ts#L2)
+Defined in: [packages/db/src/errors.ts:2](https://github.com/disclearing/db/blob/main/packages/db/src/errors.ts#L2)
 
 ## Extends
 
@@ -37,7 +37,7 @@ Defined in: [packages/db/src/errors.ts:2](https://github.com/TanStack/db/blob/ma
 new TanStackDBError(message): TanStackDBError;
 ```
 
-Defined in: [packages/db/src/errors.ts:3](https://github.com/TanStack/db/blob/main/packages/db/src/errors.ts#L3)
+Defined in: [packages/db/src/errors.ts:3](https://github.com/disclearing/db/blob/main/packages/db/src/errors.ts#L3)
 
 #### Parameters
 

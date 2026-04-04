@@ -28,10 +28,10 @@ export type {
   SyncConfig,
   SyncConfigRes,
   SyncMode,
-} from "@tanstack/db"
+} from "disclearing-db"
 
 // Re-export DeduplicatedLoadSubset for advanced sync implementations
-export { DeduplicatedLoadSubset } from "@tanstack/db"
+export { DeduplicatedLoadSubset } from "disclearing-db"
 
 // Re-export expression helpers for on-demand sync support
 export {
@@ -45,4 +45,4 @@ export {
   type ParsedOrderBy,
   type ParseWhereOptions,
   type SimpleComparison,
-} from "@tanstack/db"
+} from "disclearing-db"

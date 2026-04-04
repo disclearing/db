@@ -6,7 +6,7 @@ import {
   inject,
   signal,
 } from "@angular/core"
-import { createLiveQueryCollection } from "@tanstack/db"
+import { createLiveQueryCollection } from "disclearing-db"
 import type {
   ChangeMessage,
   Collection,
@@ -16,7 +16,7 @@ import type {
   InitialQueryBuilder,
   LiveQueryCollectionConfig,
   QueryBuilder,
-} from "@tanstack/db"
+} from "disclearing-db"
 import type { Signal } from "@angular/core"
 
 /**

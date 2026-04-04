@@ -6,7 +6,7 @@ import {
 } from "@electric-sql/client"
 import { Store } from "@tanstack/store"
 import DebugModule from "debug"
-import { DeduplicatedLoadSubset } from "@tanstack/db"
+import { DeduplicatedLoadSubset } from "disclearing-db"
 import {
   ExpectedNumberInAwaitTxIdError,
   StreamAbortedError,
@@ -24,7 +24,7 @@ import type {
   SyncMode,
   UpdateMutationFnParams,
   UtilsRecord,
-} from "@tanstack/db"
+} from "disclearing-db"
 import type { StandardSchemaV1 } from "@standard-schema/spec"
 import type {
   ControlMessage,

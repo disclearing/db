@@ -1,9 +1,9 @@
 ---
-id: "@tanstack/vue-db"
-title: "@tanstack/vue-db"
+id: "disclearing-vue-db"
+title: "disclearing-vue-db"
 ---
 
-# @tanstack/vue-db
+# disclearing-vue-db
 
 ## Interfaces
 

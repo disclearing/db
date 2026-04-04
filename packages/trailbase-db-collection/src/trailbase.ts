@@ -16,7 +16,7 @@ import type {
   SyncConfig,
   UpdateMutationFnParams,
   UtilsRecord,
-} from "@tanstack/db"
+} from "disclearing-db"
 
 type ShapeOf<T> = Record<keyof T, unknown>
 type Conversion<I, O> = (value: I) => O

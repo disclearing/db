@@ -1,3 +1,3 @@
-# @tanstack/svelte-db
+# disclearing-svelte-db
 
-Svelte helpers for TanStack DB. See [TanStack/db](https://github.com/TanStack/db) for more details.
+Svelte helpers for TanStack DB. See [TanStack/db](https://github.com/disclearing/db) for more details.

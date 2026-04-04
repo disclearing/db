@@ -1,13 +1,13 @@
 import * as React from "react"
 import { createFileRoute } from "@tanstack/react-router"
-import { useLiveQuery } from "@tanstack/react-db"
+import { useLiveQuery } from "disclearing-react-db"
 import {
   electricConfigCollection,
   electricTodoCollection,
 } from "../lib/collections"
 import { TodoApp } from "../components/TodoApp"
 import { api } from "../lib/api"
-import type { Transaction } from "@tanstack/react-db"
+import type { Transaction } from "disclearing-react-db"
 
 export const Route = createFileRoute(`/electric`)({
   component: ElectricPage,

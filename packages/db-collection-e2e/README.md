@@ -1,4 +1,4 @@
-# @tanstack/db-collection-e2e
+# disclearing-db-collection-e2e
 
 Shared end-to-end test suite for TanStack DB collections with query-driven sync and on-demand loading.
 
@@ -152,7 +152,7 @@ Create `e2e/setup.ts` in your collection package. See real examples:
 Example structure:
 
 ```typescript
-import { createCollection } from "@tanstack/db"
+import { createCollection } from "disclearing-db"
 import { yourCollectionOptions } from "../src"
 import type {
   E2ETestConfig,
@@ -220,7 +220,7 @@ Create `e2e/your-collection.e2e.test.ts`:
 
 ```typescript
 import { describe, it, expect } from "vitest"
-import { createCollection } from "@tanstack/db"
+import { createCollection } from "disclearing-db"
 import { yourCollectionOptions } from "../src"
 
 describe("Your Collection E2E", () => {
@@ -484,6 +484,6 @@ MIT
 
 ## Related
 
-- [RFC #676](https://github.com/TanStack/db/discussions/676) - Query-driven sync RFC
-- [PR #763](https://github.com/TanStack/db/pull/763) - Implementation PR
-- [TanStack DB Documentation](https://tanstack.com/db)
+- [RFC #676](https://github.com/disclearing/db/discussions/676) - Query-driven sync RFC
+- [PR #763](https://github.com/disclearing/db/pull/763) - Implementation PR
+- [TanStack DB Documentation](https://disclearing.github.io/db)

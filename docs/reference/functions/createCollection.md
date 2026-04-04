@@ -11,7 +11,7 @@ title: createCollection
 function createCollection<T, TKey, TUtils>(options): Collection<InferSchemaOutput<T>, TKey, TUtils, T, InferSchemaInput<T>> & NonSingleResult;
 ```
 
-Defined in: [packages/db/src/collection/index.ts:131](https://github.com/TanStack/db/blob/main/packages/db/src/collection/index.ts#L131)
+Defined in: [packages/db/src/collection/index.ts:131](https://github.com/disclearing/db/blob/main/packages/db/src/collection/index.ts#L131)
 
 Creates a new Collection instance with the given configuration
 
@@ -120,7 +120,7 @@ const todos = createCollection({
 function createCollection<T, TKey, TUtils>(options): Collection<InferSchemaOutput<T>, TKey, TUtils, T, InferSchemaInput<T>> & SingleResult;
 ```
 
-Defined in: [packages/db/src/collection/index.ts:144](https://github.com/TanStack/db/blob/main/packages/db/src/collection/index.ts#L144)
+Defined in: [packages/db/src/collection/index.ts:144](https://github.com/disclearing/db/blob/main/packages/db/src/collection/index.ts#L144)
 
 Creates a new Collection instance with the given configuration
 
@@ -229,7 +229,7 @@ const todos = createCollection({
 function createCollection<T, TKey, TUtils>(options): Collection<T, TKey, TUtils, never, T> & NonSingleResult;
 ```
 
-Defined in: [packages/db/src/collection/index.ts:158](https://github.com/TanStack/db/blob/main/packages/db/src/collection/index.ts#L158)
+Defined in: [packages/db/src/collection/index.ts:158](https://github.com/disclearing/db/blob/main/packages/db/src/collection/index.ts#L158)
 
 Creates a new Collection instance with the given configuration
 
@@ -338,7 +338,7 @@ const todos = createCollection({
 function createCollection<T, TKey, TUtils>(options): Collection<T, TKey, TUtils, never, T> & SingleResult;
 ```
 
-Defined in: [packages/db/src/collection/index.ts:171](https://github.com/TanStack/db/blob/main/packages/db/src/collection/index.ts#L171)
+Defined in: [packages/db/src/collection/index.ts:171](https://github.com/disclearing/db/blob/main/packages/db/src/collection/index.ts#L171)
 
 Creates a new Collection instance with the given configuration
 

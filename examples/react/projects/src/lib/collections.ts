@@ -1,5 +1,5 @@
-import { createCollection } from "@tanstack/react-db"
-import { queryCollectionOptions } from "@tanstack/query-db-collection"
+import { createCollection } from "disclearing-react-db"
+import { queryCollectionOptions } from "disclearing-query-db-collection"
 import { QueryClient } from "@tanstack/query-core"
 import {
   selectTodoSchema,

@@ -1,4 +1,4 @@
-# @tanstack/offline-transactions
+# disclearing-offline-transactions
 
 Offline-first transaction capabilities for TanStack DB that provides durable persistence of mutations with automatic retry when connectivity is restored.
 
@@ -14,13 +14,13 @@ Offline-first transaction capabilities for TanStack DB that provides durable per
 ## Installation
 
 ```bash
-npm install @tanstack/offline-transactions
+npm install disclearing-offline-transactions
 ```
 
 ## Quick Start
 
 ```typescript
-import { startOfflineExecutor } from "@tanstack/offline-transactions"
+import { startOfflineExecutor } from "disclearing-offline-transactions"
 
 // Setup offline executor
 const offline = startOfflineExecutor({
@@ -121,7 +121,7 @@ interface OfflineConfig {
 Use `NonRetriableError` for permanent failures:
 
 ```typescript
-import { NonRetriableError } from "@tanstack/offline-transactions"
+import { NonRetriableError } from "disclearing-offline-transactions"
 
 const mutationFn = async ({ transaction }) => {
   try {
@@ -143,7 +143,7 @@ const mutationFn = async ({ transaction }) => {
 import {
   IndexedDBAdapter,
   LocalStorageAdapter,
-} from "@tanstack/offline-transactions"
+} from "disclearing-offline-transactions"
 
 const executor = startOfflineExecutor({
   // Use custom storage

@@ -1,9 +1,9 @@
 ---
-id: "@tanstack/solid-db"
-title: "@tanstack/solid-db"
+id: "disclearing-solid-db"
+title: "disclearing-solid-db"
 ---
 
-# @tanstack/solid-db
+# disclearing-solid-db
 
 ## Functions
 

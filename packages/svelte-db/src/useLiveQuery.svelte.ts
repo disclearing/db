@@ -2,7 +2,7 @@
 import { untrack } from "svelte"
 // eslint-disable-next-line import/no-duplicates -- See https://github.com/un-ts/eslint-plugin-import-x/issues/308
 import { SvelteMap } from "svelte/reactivity"
-import { createLiveQueryCollection } from "@tanstack/db"
+import { createLiveQueryCollection } from "disclearing-db"
 import type {
   ChangeMessage,
   Collection,
@@ -12,7 +12,7 @@ import type {
   InitialQueryBuilder,
   LiveQueryCollectionConfig,
   QueryBuilder,
-} from "@tanstack/db"
+} from "disclearing-db"
 
 /**
  * Return type for useLiveQuery hook

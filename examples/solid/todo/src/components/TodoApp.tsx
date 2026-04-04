@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/solid-router"
 import { For, Show, createSignal } from "solid-js"
 import type { JSX } from "solid-js"
-import type { Collection } from "@tanstack/solid-db"
+import type { Collection } from "disclearing-solid-db"
 import type { SelectConfig, SelectTodo } from "../db/validation"
 
 interface TodoAppProps {

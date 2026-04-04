@@ -8,7 +8,7 @@ import {
   toValue,
   watchEffect,
 } from "vue"
-import { createLiveQueryCollection } from "@tanstack/db"
+import { createLiveQueryCollection } from "disclearing-db"
 import type {
   ChangeMessage,
   Collection,
@@ -18,7 +18,7 @@ import type {
   InitialQueryBuilder,
   LiveQueryCollectionConfig,
   QueryBuilder,
-} from "@tanstack/db"
+} from "disclearing-db"
 import type { ComputedRef, MaybeRefOrGetter } from "vue"
 
 /**

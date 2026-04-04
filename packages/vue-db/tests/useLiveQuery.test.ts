@@ -6,7 +6,7 @@ import {
   createOptimisticAction,
   eq,
   gt,
-} from "@tanstack/db"
+} from "disclearing-db"
 import { nextTick, ref, watchEffect } from "vue"
 import { useLiveQuery } from "../src/useLiveQuery"
 import { mockSyncCollectionOptions } from "../../db/tests/utils"

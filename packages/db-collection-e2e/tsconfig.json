@@ -15,10 +15,10 @@
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
     "paths": {
-      "@tanstack/db": ["../db/src"],
-      "@tanstack/db-ivm": ["../db-ivm/src"],
-      "@tanstack/electric-db-collection": ["../electric-db-collection"],
-      "@tanstack/query-db-collection": ["../query-db-collection"]
+      "disclearing-db": ["../db/src"],
+      "disclearing-db-ivm": ["../db-ivm/src"],
+      "disclearing-electric-db-collection": ["../electric-db-collection"],
+      "disclearing-query-db-collection": ["../query-db-collection"]
     }
   },
   "include": ["src/**/*", "support/**/*"],

@@ -21,8 +21,8 @@ Schemas catch invalid data from optimistic mutations before it enters your colle
 
 ```typescript
 import { z } from 'zod'
-import { createCollection } from '@tanstack/react-db'
-import { queryCollectionOptions } from '@tanstack/query-db-collection'
+import { createCollection } from 'disclearing-react-db'
+import { queryCollectionOptions } from 'disclearing-query-db-collection'
 
 const todoSchema = z.object({
   id: z.string(),
@@ -831,8 +831,8 @@ A complete todo application demonstrating validation, transformations, and defau
 
 ```typescript
 import { z } from 'zod'
-import { createCollection } from '@tanstack/react-db'
-import { queryCollectionOptions } from '@tanstack/query-db-collection'
+import { createCollection } from 'disclearing-react-db'
+import { queryCollectionOptions } from 'disclearing-query-db-collection'
 
 // Schema with validation, transformations, and defaults
 const todoSchema = z.object({

@@ -5,7 +5,7 @@
  */
 
 import { describe, expect, it } from "vitest"
-import { createLiveQueryCollection, eq, gt, isNull, lt } from "@tanstack/db"
+import { createLiveQueryCollection, eq, gt, isNull, lt } from "disclearing-db"
 import { waitForQueryData } from "../utils/helpers"
 import type { E2ETestConfig } from "../types"
 

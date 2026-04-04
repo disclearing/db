@@ -5,7 +5,7 @@
  */
 
 import { afterAll, afterEach, beforeAll, describe } from "vitest"
-import { createCollection } from "@tanstack/db"
+import { createCollection } from "disclearing-db"
 import { QueryClient } from "@tanstack/query-core"
 import { queryCollectionOptions } from "../src/query"
 import {

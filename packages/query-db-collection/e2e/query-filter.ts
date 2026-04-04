@@ -3,13 +3,13 @@
  * Uses expression helpers to implement proper predicate push-down
  */
 
-import { parseLoadSubsetOptions } from "@tanstack/db"
+import { parseLoadSubsetOptions } from "disclearing-db"
 import type {
   IR,
   LoadSubsetOptions,
   ParsedOrderBy,
   SimpleComparison,
-} from "@tanstack/db"
+} from "disclearing-db"
 
 const DEBUG_VERBOSE = process.env.DEBUG_QUERY_PUSH === `1`
 const DEBUG_SUMMARY =

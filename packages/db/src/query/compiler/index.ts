@@ -1,4 +1,4 @@
-import { distinct, filter, map } from "@tanstack/db-ivm"
+import { distinct, filter, map } from "disclearing-db-ivm"
 import { optimizeQuery } from "../optimizer.js"
 import {
   CollectionInputNotFoundError,

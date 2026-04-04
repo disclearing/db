@@ -5,7 +5,7 @@ title: TransactionNotPendingMutateError
 
 # Class: TransactionNotPendingMutateError
 
-Defined in: [packages/db/src/errors.ts:283](https://github.com/TanStack/db/blob/main/packages/db/src/errors.ts#L283)
+Defined in: [packages/db/src/errors.ts:283](https://github.com/disclearing/db/blob/main/packages/db/src/errors.ts#L283)
 
 ## Extends
 
@@ -19,7 +19,7 @@ Defined in: [packages/db/src/errors.ts:283](https://github.com/TanStack/db/blob/
 new TransactionNotPendingMutateError(): TransactionNotPendingMutateError;
 ```
 
-Defined in: [packages/db/src/errors.ts:284](https://github.com/TanStack/db/blob/main/packages/db/src/errors.ts#L284)
+Defined in: [packages/db/src/errors.ts:284](https://github.com/disclearing/db/blob/main/packages/db/src/errors.ts#L284)
 
 #### Returns
 

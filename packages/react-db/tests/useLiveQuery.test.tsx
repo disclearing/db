@@ -9,7 +9,7 @@ import {
   eq,
   gt,
   lte,
-} from "@tanstack/db"
+} from "disclearing-db"
 import { useEffect } from "react"
 import { useLiveQuery } from "../src/useLiveQuery"
 import { mockSyncCollectionOptions } from "../../db/tests/utils"

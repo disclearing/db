@@ -1,4 +1,4 @@
-import type { IR, LoadSubsetOptions } from "@tanstack/db"
+import type { IR, LoadSubsetOptions } from "disclearing-db"
 
 /**
  * Serializes LoadSubsetOptions into a stable, hashable format for query keys

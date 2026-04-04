@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react"
-import { useLiveQuery } from "@tanstack/react-db"
+import { useLiveQuery } from "disclearing-react-db"
 import { createTodoActions, todoCollection } from "~/db/todos"
 
 interface TodoDemoProps {

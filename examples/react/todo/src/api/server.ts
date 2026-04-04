@@ -8,7 +8,7 @@ import {
   validateUpdateTodo,
 } from "../db/validation"
 import type { Express } from "express"
-import type { Txid } from "@tanstack/electric-db-collection"
+import type { Txid } from "disclearing-electric-db-collection"
 
 // Create Express app
 const app: Express = express()

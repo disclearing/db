@@ -1,11 +1,11 @@
 {
-  "name": "@tanstack/electric-db-collection",
+  "name": "disclearing-electric-db-collection",
   "description": "ElectricSQL collection for TanStack DB",
   "version": "0.2.3",
   "dependencies": {
     "@electric-sql/client": "^1.1.4",
     "@standard-schema/spec": "^1.0.0",
-    "@tanstack/db": "workspace:*",
+    "disclearing-db": "workspace:*",
     "@tanstack/store": "^0.8.0",
     "debug": "^4.4.3"
   },
@@ -39,10 +39,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/TanStack/db.git",
+    "url": "https://github.com/disclearing/db.git",
     "directory": "packages/electric-db-collection"
   },
-  "homepage": "https://tanstack.com/db",
+  "homepage": "https://disclearing.github.io/db",
   "keywords": [
     "electric",
     "sql",

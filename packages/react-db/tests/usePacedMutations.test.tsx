@@ -5,7 +5,7 @@ import {
   debounceStrategy,
   queueStrategy,
   throttleStrategy,
-} from "@tanstack/db"
+} from "disclearing-db"
 import { usePacedMutations } from "../src/usePacedMutations"
 import { mockSyncCollectionOptionsNoInitialState } from "../../db/tests/utils"
 

@@ -11,7 +11,7 @@ The API is almost identical to D2TS, but without the need to specify a version w
 Here's a simple example that demonstrates the core concepts:
 
 ```typescript
-import { D2, map, filter, debug, MultiSet } from "@tanstack/db-ivm"
+import { D2, map, filter, debug, MultiSet } from "disclearing-db-ivm"
 
 // Create a new D2 graph
 const graph = new D2()

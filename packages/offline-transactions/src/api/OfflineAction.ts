@@ -1,6 +1,6 @@
-import { OnMutateMustBeSynchronousError } from "@tanstack/db"
+import { OnMutateMustBeSynchronousError } from "disclearing-db"
 import { OfflineTransaction } from "./OfflineTransaction"
-import type { Transaction } from "@tanstack/db"
+import type { Transaction } from "disclearing-db"
 import type {
   CreateOfflineActionOptions,
   OfflineMutationFn,

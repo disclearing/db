@@ -6,7 +6,7 @@
 
 import { randomUUID } from "node:crypto"
 import { describe, expect, it } from "vitest"
-import { createLiveQueryCollection, gt } from "@tanstack/db"
+import { createLiveQueryCollection, gt } from "disclearing-db"
 import { waitFor, waitForQueryData } from "../utils/helpers"
 import type { E2ETestConfig } from "../types"
 

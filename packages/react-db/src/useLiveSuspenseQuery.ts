@@ -10,7 +10,7 @@ import type {
   NonSingleResult,
   QueryBuilder,
   SingleResult,
-} from "@tanstack/db"
+} from "disclearing-db"
 
 /**
  * Create a live query with React Suspense support

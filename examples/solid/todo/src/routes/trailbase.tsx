@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/solid-router"
-import { useLiveQuery } from "@tanstack/solid-db"
+import { useLiveQuery } from "disclearing-solid-db"
 import {
   trailBaseConfigCollection,
   trailBaseTodoCollection,

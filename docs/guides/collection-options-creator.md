@@ -445,10 +445,10 @@ sync: {
 
 For complete, production-ready examples, see the collection packages in the TanStack DB repository:
 
-- **[@tanstack/query-collection](https://github.com/TanStack/db/tree/main/packages/query-collection)** - Pattern A: User-provided handlers with full refetch strategy
-- **[@tanstack/trailbase-collection](https://github.com/TanStack/db/tree/main/packages/trailbase-collection)** - Pattern B: Built-in handlers with ID-based tracking  
-- **[@tanstack/electric-collection](https://github.com/TanStack/db/tree/main/packages/electric-collection)** - Pattern A: Transaction ID tracking with complex sync protocols
-- **[@tanstack/rxdb-collection](https://github.com/TanStack/db/tree/main/packages/rxdb-collection)** - Pattern B: Built-in handlers that bridge [RxDB](https://rxdb.info) change streams into TanStack DB's sync lifecycle
+- **[@tanstack/query-collection](https://github.com/disclearing/db/tree/main/packages/query-collection)** - Pattern A: User-provided handlers with full refetch strategy
+- **[@tanstack/trailbase-collection](https://github.com/disclearing/db/tree/main/packages/trailbase-collection)** - Pattern B: Built-in handlers with ID-based tracking  
+- **[@tanstack/electric-collection](https://github.com/disclearing/db/tree/main/packages/electric-collection)** - Pattern A: Transaction ID tracking with complex sync protocols
+- **[@tanstack/rxdb-collection](https://github.com/disclearing/db/tree/main/packages/rxdb-collection)** - Pattern B: Built-in handlers that bridge [RxDB](https://rxdb.info) change streams into TanStack DB's sync lifecycle
 
 ### Key Lessons from Production Collections
 
@@ -709,7 +709,7 @@ export function webSocketCollectionOptions<TItem extends object>(
 ## Usage Example
 
 ```typescript
-import { createCollection } from '@tanstack/react-db'
+import { createCollection } from 'disclearing-react-db'
 import { webSocketCollectionOptions } from './websocket-collection'
 
 const todos = createCollection(

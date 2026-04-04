@@ -9,7 +9,7 @@ TanStack DB provides comprehensive error handling capabilities to ensure robust 
 
 ## Error Types
 
-TanStack DB provides named error classes for better error handling and type safety. All error classes can be imported from `@tanstack/db` (or more commonly, the framework-specific package e.g. `@tanstack/react-db`):
+TanStack DB provides named error classes for better error handling and type safety. All error classes can be imported from `@tanstack/db` (or more commonly, the framework-specific package e.g. `disclearing-react-db`):
 
 ```ts
 import {
@@ -19,7 +19,7 @@ import {
   MissingHandlerError,
   TransactionError,
   // ... and many more
-} from "@tanstack/db"
+} from "disclearing-db"
 ```
 
 ### SchemaValidationError
@@ -27,7 +27,7 @@ import {
 Thrown when data doesn't match the collection's schema during insert or update operations:
 
 ```ts
-import { SchemaValidationError } from "@tanstack/db"
+import { SchemaValidationError } from "disclearing-db"
 
 try {
   todoCollection.insert({ text: 123 }) // Invalid type
@@ -76,9 +76,9 @@ For more details on schema validation and type transformations, see the [Schemas
 Query collections provide enhanced error tracking utilities through the `utils` object. These methods expose error state information and provide recovery mechanisms for failed queries:
 
 ```tsx
-import { createCollection } from "@tanstack/db"
-import { queryCollectionOptions } from "@tanstack/query-db-collection"
-import { useLiveQuery } from "@tanstack/react-db"
+import { createCollection } from "disclearing-db"
+import { queryCollectionOptions } from "disclearing-query-db-collection"
+import { useLiveQuery } from "disclearing-react-db"
 
 const syncedCollection = createCollection(
   queryCollectionOptions({
@@ -122,7 +122,7 @@ Error tracking methods:
 Collections track their status and transition between states:
 
 ```tsx
-import { useLiveQuery } from "@tanstack/react-db"
+import { useLiveQuery } from "disclearing-react-db"
 
 const TodoList = () => {
   const { data, status, isError, isLoading, isReady } = useLiveQuery(
@@ -154,7 +154,7 @@ Collection status values:
 For React applications, you can handle loading and error states with `useLiveSuspenseQuery`, React Suspense, and Error Boundaries:
 
 ```tsx
-import { useLiveSuspenseQuery } from "@tanstack/react-db"
+import { useLiveSuspenseQuery } from "disclearing-react-db"
 import { Suspense } from "react"
 import { ErrorBoundary } from "react-error-boundary"
 
@@ -283,7 +283,7 @@ try {
 Collections in an `error` state cannot perform operations and must be manually recovered:
 
 ```ts
-import { CollectionInErrorStateError } from "@tanstack/db"
+import { CollectionInErrorStateError } from "disclearing-db"
 
 try {
   todoCollection.insert(newTodo)
@@ -321,7 +321,7 @@ todoCollection.insert(newTodo)
 Thrown when inserting items with existing keys:
 
 ```ts
-import { DuplicateKeyError } from "@tanstack/db"
+import { DuplicateKeyError } from "disclearing-db"
 
 try {
   todoCollection.insert({ id: "existing-id", text: "Todo" })
@@ -338,7 +338,7 @@ try {
 Thrown when an object is created without a defined key:
 
 ```ts
-import { UndefinedKeyError } from "@tanstack/db"
+import { UndefinedKeyError } from "disclearing-db"
 
 const collection = createCollection({
   id: "todos",
@@ -362,7 +362,7 @@ try {
 Thrown when trying to update a key that doesn't exist in the collection:
 
 ```ts
-import { UpdateKeyNotFoundError } from "@tanstack/db"
+import { UpdateKeyNotFoundError } from "disclearing-db"
 
 try {
   todoCollection.update("nonexistent-key", draft => {
@@ -381,7 +381,7 @@ try {
 Thrown when attempting to change an item's key (not allowed - delete and re-insert instead):
 
 ```ts
-import { KeyUpdateNotAllowedError } from "@tanstack/db"
+import { KeyUpdateNotAllowedError } from "disclearing-db"
 
 try {
   todoCollection.update("todo-1", draft => {
@@ -402,7 +402,7 @@ try {
 Thrown when trying to delete a key that doesn't exist:
 
 ```ts
-import { DeleteKeyNotFoundError } from "@tanstack/db"
+import { DeleteKeyNotFoundError } from "disclearing-db"
 
 try {
   todoCollection.delete("nonexistent-key")
@@ -421,7 +421,7 @@ try {
 Query collections handle sync errors gracefully and mark the collection as ready even on error to avoid blocking applications:
 
 ```ts
-import { queryCollectionOptions } from "@tanstack/query-db-collection"
+import { queryCollectionOptions } from "disclearing-query-db-collection"
 
 const todoCollection = createCollection(
   queryCollectionOptions({
@@ -561,7 +561,7 @@ Transactions validate their state before operations to prevent misuse. Here are 
 Thrown when creating a transaction without a required `mutationFn`:
 
 ```ts
-import { MissingMutationFunctionError } from "@tanstack/db"
+import { MissingMutationFunctionError } from "disclearing-db"
 
 try {
   const tx = createTransaction({}) // Missing mutationFn
@@ -577,7 +577,7 @@ try {
 Thrown when calling `mutate()` after a transaction is no longer pending:
 
 ```ts
-import { TransactionNotPendingMutateError } from "@tanstack/db"
+import { TransactionNotPendingMutateError } from "disclearing-db"
 
 const tx = createTransaction({ mutationFn: async () => {} })
 
@@ -599,7 +599,7 @@ try {
 Thrown when calling `commit()` after a transaction is no longer pending:
 
 ```ts
-import { TransactionNotPendingCommitError } from "@tanstack/db"
+import { TransactionNotPendingCommitError } from "disclearing-db"
 
 const tx = createTransaction({ mutationFn: async () => {} })
 tx.mutate(() => collection.insert({ id: "1", text: "Item" }))
@@ -620,7 +620,7 @@ try {
 Thrown when calling `rollback()` on a transaction that's already completed:
 
 ```ts
-import { TransactionAlreadyCompletedRollbackError } from "@tanstack/db"
+import { TransactionAlreadyCompletedRollbackError } from "disclearing-db"
 
 const tx = createTransaction({ mutationFn: async () => {} })
 tx.mutate(() => collection.insert({ id: "1", text: "Item" }))
@@ -716,8 +716,8 @@ import {
   DeleteKeyNotFoundError,
   TransactionNotPendingCommitError,
   createTransaction
-} from "@tanstack/db"
-import { useLiveQuery } from "@tanstack/react-db"
+} from "disclearing-db"
+import { useLiveQuery } from "disclearing-react-db"
 
 const todoCollection = createCollection({
   id: "todos",

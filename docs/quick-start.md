@@ -10,8 +10,8 @@ TanStack DB is the reactive client-first store for your API. Stop building custo
 - **Mutate data** with instant optimistic updates
 
 ```tsx
-import { createCollection, eq, useLiveQuery } from '@tanstack/react-db'
-import { queryCollectionOptions } from '@tanstack/query-db-collection'
+import { createCollection, eq, useLiveQuery } from 'disclearing-react-db'
+import { queryCollectionOptions } from 'disclearing-query-db-collection'
 
 // Define a collection that loads data using TanStack Query
 const todoCollection = createCollection(
@@ -64,7 +64,7 @@ You now have collections, live queries, and optimistic mutations! Let's break th
 ## Installation
 
 ```bash
-npm install @tanstack/react-db @tanstack/query-db-collection
+npm install disclearing-react-db disclearing-query-db-collection
 ```
 
 ## 1. Create a Collection

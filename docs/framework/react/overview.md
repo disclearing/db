@@ -6,7 +6,7 @@ id: adapter
 ## Installation
 
 ```sh
-npm install @tanstack/react-db
+npm install disclearing-react-db
 ```
 
 ## React Hooks
@@ -22,7 +22,7 @@ For comprehensive documentation on writing queries (filtering, joins, aggregatio
 The `useLiveQuery` hook creates a live query that automatically updates your component when data changes:
 
 ```tsx
-import { useLiveQuery } from '@tanstack/react-db'
+import { useLiveQuery } from 'disclearing-react-db'
 
 function TodoList() {
   const { data, isLoading } = useLiveQuery((q) =>

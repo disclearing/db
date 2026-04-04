@@ -8,7 +8,7 @@ Query collections provide seamless integration between TanStack DB and TanStack 
 
 ## Overview
 
-The `@tanstack/query-db-collection` package allows you to create collections that:
+The `disclearing-query-db-collection` package allows you to create collections that:
 
 - Automatically fetch remote data via TanStack Query
 - Support optimistic updates with automatic rollback on errors
@@ -18,15 +18,15 @@ The `@tanstack/query-db-collection` package allows you to create collections tha
 ## Installation
 
 ```bash
-npm install @tanstack/query-db-collection @tanstack/query-core @tanstack/db
+npm install disclearing-query-db-collection @tanstack/query-core @tanstack/db
 ```
 
 ## Basic Usage
 
 ```typescript
 import { QueryClient } from "@tanstack/query-core"
-import { createCollection } from "@tanstack/db"
-import { queryCollectionOptions } from "@tanstack/query-db-collection"
+import { createCollection } from "disclearing-db"
+import { queryCollectionOptions } from "disclearing-query-db-collection"
 
 const queryClient = new QueryClient()
 
@@ -428,7 +428,7 @@ import {
   extractSimpleComparisons,
   parseLoadSubsetOptions,
 } from '@tanstack/db'
-// Or from '@tanstack/query-db-collection' (re-exported for convenience)
+// Or from 'disclearing-query-db-collection' (re-exported for convenience)
 ```
 
 These helpers allow you to parse expression trees without manually traversing complex AST structures.
@@ -436,8 +436,8 @@ These helpers allow you to parse expression trees without manually traversing co
 ### Quick Start: Simple REST API
 
 ```typescript
-import { createCollection } from '@tanstack/react-db'
-import { queryCollectionOptions } from '@tanstack/query-db-collection'
+import { createCollection } from 'disclearing-react-db'
+import { queryCollectionOptions } from 'disclearing-query-db-collection'
 import { parseLoadSubsetOptions } from '@tanstack/db'
 import { QueryClient } from '@tanstack/query-core'
 
@@ -492,7 +492,7 @@ const productsCollection = createCollection(
 )
 
 // Usage with live queries
-import { createLiveQueryCollection } from '@tanstack/react-db'
+import { createLiveQueryCollection } from 'disclearing-react-db'
 import { eq, lt, and } from '@tanstack/db'
 
 const affordableElectronics = createLiveQueryCollection({

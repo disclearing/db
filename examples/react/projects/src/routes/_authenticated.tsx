@@ -5,7 +5,7 @@ import {
   createFileRoute,
   useNavigate,
 } from "@tanstack/react-router"
-import { useLiveQuery } from "@tanstack/react-db"
+import { useLiveQuery } from "disclearing-react-db"
 import { authClient } from "@/lib/auth-client"
 import { projectCollection } from "@/lib/collections"
 

@@ -1,5 +1,5 @@
 /**
- * @tanstack/db-collection-e2e
+ * disclearing-db-collection-e2e
  *
  * Shared end-to-end test suite for TanStack DB collections
  */

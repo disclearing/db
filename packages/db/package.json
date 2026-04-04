@@ -1,10 +1,10 @@
 {
-  "name": "@tanstack/db",
+  "name": "disclearing-db",
   "description": "A reactive client store for building super fast apps on sync",
   "version": "0.5.3",
   "dependencies": {
     "@standard-schema/spec": "^1.0.0",
-    "@tanstack/db-ivm": "workspace:*",
+    "disclearing-db-ivm": "workspace:*",
     "@tanstack/pacer": "^0.16.3"
   },
   "devDependencies": {
@@ -40,10 +40,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/TanStack/db.git",
+    "url": "https://github.com/disclearing/db.git",
     "directory": "packages/db"
   },
-  "homepage": "https://tanstack.com/db",
+  "homepage": "https://disclearing.github.io/db",
   "keywords": [
     "optimistic",
     "typescript"

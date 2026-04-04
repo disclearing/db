@@ -5,11 +5,11 @@
 TanStack DB solves the problems of building fast, modern apps. It extends TanStack Query with collections, live queries and optimistic mutations that keep your UI reactive, consistent and blazing fast 🔥
 
 <p>
-  <a href="https://x.com/intent/post?text=TanStack%20DB&url=https://tanstack.com/db">
+  <a href="https://x.com/intent/post?text=TanStack%20DB&url=https://disclearing.github.io/db">
     <img alt="#TanStack" src="https://img.shields.io/twitter/url?color=%2308a0e9&label=%23TanStack&style=social&url=https%3A%2F%2Ftwitter.com%2Fintent%2Ftweet%3Fbutton_hashtag%3DTanStack" /></a>
   <a href="#status">
     <img src="https://img.shields.io/badge/status-alpha-orange" alt="Status - Alpha"></a>
-  <a href="https://npmjs.com/package/@tanstack/db">
+  <a href="https://npmjs.com/package/disclearing-db">
     <img alt="" src="https://img.shields.io/npm/dm/@tanstack/db.svg" /></a>
   <a href="https://discord.gg/yjUNbvbraC">
     <img alt="" src="https://img.shields.io/badge/Discord-TanStack-%235865F2" /></a>
@@ -19,7 +19,7 @@ TanStack DB solves the problems of building fast, modern apps. It extends TanSta
     <img alt="" src="https://img.shields.io/twitter/follow/tan_stack.svg?style=social&label=Follow @TanStack" /></a>
 </p>
 
-## 💥 Visit the [TanStack/db](https://github.com/TanStack/db) repo for docs and details!
+## 💥 Visit the [TanStack/db](https://github.com/disclearing/db) repo for docs and details!
 
 - 🚀 **Avoid endpoint sprawl**<br />
   Load data into normalized collections instead of building custom endpoints for every view

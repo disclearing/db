@@ -3,7 +3,7 @@ import {
   BaseQueryBuilder,
   CollectionImpl,
   createLiveQueryCollection,
-} from "@tanstack/db"
+} from "disclearing-db"
 import type {
   Collection,
   CollectionConfigSingleRowOption,
@@ -16,7 +16,7 @@ import type {
   NonSingleResult,
   QueryBuilder,
   SingleResult,
-} from "@tanstack/db"
+} from "disclearing-db"
 
 const DEFAULT_GC_TIME_MS = 1 // Live queries created by useLiveQuery are cleaned up immediately (0 disables GC)
 

@@ -6,7 +6,7 @@ id: adapter
 ## Installation
 
 ```sh
-npm install @tanstack/svelte-db
+npm install disclearing-svelte-db
 ```
 
 ## Svelte Utilities
@@ -23,7 +23,7 @@ The `useLiveQuery` utility creates a live query that automatically updates your 
 
 ```svelte
 <script>
-  import { useLiveQuery } from '@tanstack/svelte-db'
+  import { useLiveQuery } from 'disclearing-svelte-db'
   import { eq } from '@tanstack/db'
 
   const query = useLiveQuery((q) =>
@@ -56,7 +56,7 @@ Use dependency arrays when your query depends on external reactive values (props
 
 ```svelte
 <script>
-  import { useLiveQuery } from '@tanstack/svelte-db'
+  import { useLiveQuery } from 'disclearing-svelte-db'
   import { gt } from '@tanstack/db'
 
   let { minPriority } = $props()
@@ -87,7 +87,7 @@ When a dependency value changes:
 
 ```svelte
 <script>
-  import { useLiveQuery } from '@tanstack/svelte-db'
+  import { useLiveQuery } from 'disclearing-svelte-db'
   import { eq, and } from '@tanstack/db'
 
   let userId = $state(1)
@@ -118,7 +118,7 @@ When a dependency value changes:
 
 ```svelte
 <script>
-  import { useLiveQuery } from '@tanstack/svelte-db'
+  import { useLiveQuery } from 'disclearing-svelte-db'
 
   // No external dependencies - query never changes
   const query = useLiveQuery(
@@ -134,7 +134,7 @@ When a dependency value changes:
 
 ```svelte
 <script>
-  import { useLiveQuery } from '@tanstack/svelte-db'
+  import { useLiveQuery } from 'disclearing-svelte-db'
 
   // Same as above - no deps needed
   const query = useLiveQuery(
@@ -151,7 +151,7 @@ You can access all status properties directly on the query result:
 
 ```svelte
 <script>
-  import { useLiveQuery } from '@tanstack/svelte-db'
+  import { useLiveQuery } from 'disclearing-svelte-db'
   import { eq } from '@tanstack/db'
 
   const query = useLiveQuery((q) =>

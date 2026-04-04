@@ -1,10 +1,10 @@
-# @tanstack/angular-db
+# disclearing-angular-db
 
-Angular hooks for TanStack DB. See [TanStack/db](https://github.com/TanStack/db) for more details.
+Angular hooks for TanStack DB. See [TanStack/db](https://github.com/disclearing/db) for more details.
 
 Installation
 
-    npm install @tanstack/angular-db @tanstack/db
+    npm install disclearing-angular-db @tanstack/db
 
 Usage
 
@@ -12,7 +12,7 @@ Basic Setup
 
 First, create a collection:
 
-    import { createCollection, localOnlyCollectionOptions } from "@tanstack/db"
+    import { createCollection, localOnlyCollectionOptions } from "disclearing-db"
 
     interface Todo {
       id: number
@@ -44,7 +44,7 @@ Direct Collection Usage
 The simplest way to use injectLiveQuery is to pass a collection directly:
 
     import { Component } from "@angular/core"
-    import { injectLiveQuery } from "@tanstack/angular-db"
+    import { injectLiveQuery } from "disclearing-angular-db"
     import { todosCollection } from "./collections/todos-collection"
 
     @Component({
@@ -70,8 +70,8 @@ Static Query Functions
 You can create filtered queries using a query function. Note: The query function is evaluated once and is not reactive to signal changes:
 
     import { Component } from "@angular/core"
-    import { injectLiveQuery } from "@tanstack/angular-db"
-    import { eq } from "@tanstack/db"
+    import { injectLiveQuery } from "disclearing-angular-db"
+    import { eq } from "disclearing-db"
     import { todosCollection } from "./collections/todos-collection"
 
     @Component({
@@ -116,8 +116,8 @@ Reactive Queries with Parameters
 For queries that need to react to component state changes, use the reactive parameters overload:
 
     import { Component, signal } from "@angular/core"
-    import { injectLiveQuery } from "@tanstack/angular-db"
-    import { eq } from "@tanstack/db"
+    import { injectLiveQuery } from "disclearing-angular-db"
+    import { eq } from "disclearing-db"
     import { todosCollection } from "./collections/todos-collection"
 
     @Component({
@@ -160,8 +160,8 @@ Advanced Configuration
 You can also pass a full configuration object:
 
     import { Component } from "@angular/core"
-    import { injectLiveQuery } from "@tanstack/angular-db"
-    import { eq } from "@tanstack/db"
+    import { injectLiveQuery } from "disclearing-angular-db"
+    import { eq } from "disclearing-db"
     import { todosCollection } from "./collections/todos-collection"
 
     @Component({

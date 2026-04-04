@@ -5,7 +5,7 @@ import {
   createLiveQueryCollection,
   eq,
   gt,
-} from "@tanstack/db"
+} from "disclearing-db"
 import { StrictMode, Suspense } from "react"
 import { useLiveSuspenseQuery } from "../src/useLiveSuspenseQuery"
 import { mockSyncCollectionOptions } from "../../db/tests/utils"

@@ -1,15 +1,15 @@
 {
-  "name": "@tanstack/vue-db",
-  "description": "Vue integration for @tanstack/db",
+  "name": "disclearing-vue-db",
+  "description": "Vue integration for disclearing-db",
   "version": "0.0.79",
   "author": "Kyle Mathews",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/TanStack/db.git",
+    "url": "https://github.com/disclearing/db.git",
     "directory": "packages/vue-db"
   },
-  "homepage": "https://tanstack.com/db",
+  "homepage": "https://disclearing.github.io/db",
   "keywords": [
     "optimistic",
     "vue",
@@ -17,7 +17,7 @@
   ],
   "packageManager": "pnpm@10.22.0",
   "dependencies": {
-    "@tanstack/db": "workspace:*"
+    "disclearing-db": "workspace:*"
   },
   "devDependencies": {
     "@electric-sql/client": "1.1.4",

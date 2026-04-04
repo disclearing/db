@@ -9,7 +9,7 @@ title: QueryCollectionMeta
 type QueryCollectionMeta = Record<string, unknown> & object;
 ```
 
-Defined in: [packages/query-db-collection/src/query.ts:50](https://github.com/TanStack/db/blob/main/packages/query-db-collection/src/query.ts#L50)
+Defined in: [packages/query-db-collection/src/query.ts:50](https://github.com/disclearing/db/blob/main/packages/query-db-collection/src/query.ts#L50)
 
 Base type for Query Collection meta properties.
 Users can extend this type when augmenting the @tanstack/query-core module

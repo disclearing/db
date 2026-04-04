@@ -1,6 +1,6 @@
 import { useCallback, useMemo, useRef } from "react"
-import { createPacedMutations } from "@tanstack/db"
-import type { PacedMutationsConfig, Transaction } from "@tanstack/db"
+import { createPacedMutations } from "disclearing-db"
+import type { PacedMutationsConfig, Transaction } from "disclearing-db"
 
 /**
  * React hook for managing paced mutations with timing strategies.

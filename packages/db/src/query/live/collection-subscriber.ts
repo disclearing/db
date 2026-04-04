@@ -1,9 +1,9 @@
-import { MultiSet } from "@tanstack/db-ivm"
+import { MultiSet } from "disclearing-db-ivm"
 import {
   normalizeExpressionPaths,
   normalizeOrderByPaths,
 } from "../compiler/expressions.js"
-import type { MultiSetArray, RootStreamBuilder } from "@tanstack/db-ivm"
+import type { MultiSetArray, RootStreamBuilder } from "disclearing-db-ivm"
 import type { Collection } from "../../collection/index.js"
 import type { ChangeMessage } from "../../types.js"
 import type { Context, GetResult } from "../builder/types.js"

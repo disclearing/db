@@ -1,4 +1,4 @@
-import { filter, groupBy, groupByOperators, map } from "@tanstack/db-ivm"
+import { filter, groupBy, groupByOperators, map } from "disclearing-db-ivm"
 import { Func, PropRef, getHavingExpression } from "../ir.js"
 import {
   AggregateFunctionNotInSelectError,

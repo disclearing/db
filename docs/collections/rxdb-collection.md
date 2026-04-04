@@ -9,7 +9,7 @@ RxDB collections provide seamless integration between TanStack DB and [RxDB](htt
 
 ## Overview
 
-The `@tanstack/rxdb-db-collection` package allows you to create collections that:
+The `disclearing-rxdb-db-collection` package allows you to create collections that:
 - Automatically mirror the state of an underlying RxDB collection
 - Reactively update when RxDB documents change
 - Support optimistic mutations with rollback on error
@@ -25,7 +25,7 @@ The `@tanstack/rxdb-db-collection` package allows you to create collections that
 Install the RXDB collection packages along with your preferred framework integration.
 
 ```bash
-npm install @tanstack/rxdb-db-collection rxdb @tanstack/react-db
+npm install disclearing-rxdb-db-collection rxdb disclearing-react-db
 ```
 
 
@@ -88,8 +88,8 @@ const replicationState = replicateRxCollection({
 ### 4. Wrap the RxDB collection with TanStack DB
 
 ```ts
-import { createCollection } from '@tanstack/react-db'
-import { rxdbCollectionOptions } from '@tanstack/rxdb-db-collection'
+import { createCollection } from 'disclearing-react-db'
+import { rxdbCollectionOptions } from 'disclearing-rxdb-db-collection'
 
 const todosCollection = createCollection(
   rxdbCollectionOptions({

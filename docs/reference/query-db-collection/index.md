@@ -1,9 +1,9 @@
 ---
-id: "@tanstack/query-db-collection"
-title: "@tanstack/query-db-collection"
+id: "disclearing-query-db-collection"
+title: "disclearing-query-db-collection"
 ---
 
-# @tanstack/query-db-collection
+# disclearing-query-db-collection
 
 ## Classes
 

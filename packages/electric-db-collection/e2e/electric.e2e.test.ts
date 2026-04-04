@@ -5,7 +5,7 @@
  */
 
 import { afterAll, afterEach, beforeAll, describe, inject } from "vitest"
-import { createCollection } from "@tanstack/db"
+import { createCollection } from "disclearing-db"
 import { electricCollectionOptions } from "../src/electric"
 import { makePgClient } from "../../db-collection-e2e/support/global-setup"
 import {

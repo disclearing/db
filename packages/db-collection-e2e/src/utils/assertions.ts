@@ -1,6 +1,6 @@
 import { expect } from "vitest"
 import { getLoadedIds } from "./helpers"
-import type { Collection } from "@tanstack/db"
+import type { Collection } from "disclearing-db"
 
 /**
  * Assert that a collection has loaded exactly the expected items (no more, no less)

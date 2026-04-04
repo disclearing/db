@@ -1,4 +1,4 @@
-import { TanStackDBError } from "@tanstack/db"
+import { TanStackDBError } from "disclearing-db"
 
 export class FirestoreIntegrationError extends TanStackDBError {
   constructor(message: string) {

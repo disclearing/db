@@ -557,7 +557,7 @@ describe(`Transactions`, () => {
   describe(`duplicate instance detection`, () => {
     it(`sets a global marker in dev mode when in browser top window`, () => {
       // The duplicate instance marker should be set when the module loads in dev mode
-      const marker = Symbol.for(`@tanstack/db/instance-marker`)
+      const marker = Symbol.for(`disclearing-db/instance-marker`)
       // This will only be true if we're in dev mode AND in a browser top window
       // In test environment (vitest), we should have these conditions met
       expect((globalThis as any)[marker]).toBe(true)
@@ -566,7 +566,7 @@ describe(`Transactions`, () => {
     it(`marker is only set in development mode`, () => {
       // This test verifies the marker exists in our test environment
       // In production (NODE_ENV=production), the marker would NOT be set
-      const marker = Symbol.for(`@tanstack/db/instance-marker`)
+      const marker = Symbol.for(`disclearing-db/instance-marker`)
       const isDev =
         typeof process !== `undefined` && process.env.NODE_ENV !== `production`
 

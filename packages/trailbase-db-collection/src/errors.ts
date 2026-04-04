@@ -1,4 +1,4 @@
-import { TanStackDBError } from "@tanstack/db"
+import { TanStackDBError } from "disclearing-db"
 
 // TrailBase DB Collection Errors
 export class TrailBaseDBCollectionError extends TanStackDBError {

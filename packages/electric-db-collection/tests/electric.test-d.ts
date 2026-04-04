@@ -6,14 +6,14 @@ import {
   createLiveQueryCollection,
   eq,
   gt,
-} from "@tanstack/db"
+} from "disclearing-db"
 import { electricCollectionOptions } from "../src/electric"
 import type { ElectricCollectionConfig } from "../src/electric"
 import type {
   DeleteMutationFnParams,
   InsertMutationFnParams,
   UpdateMutationFnParams,
-} from "@tanstack/db"
+} from "disclearing-db"
 
 describe(`Electric collection type resolution tests`, () => {
   // Define test types

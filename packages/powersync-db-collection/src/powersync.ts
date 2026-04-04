@@ -24,7 +24,7 @@ import type {
   PowerSyncCollectionUtils,
 } from "./definitions"
 import type { PendingOperation } from "./PendingOperationStore"
-import type { SyncConfig } from "@tanstack/db"
+import type { SyncConfig } from "disclearing-db"
 import type { StandardSchemaV1 } from "@standard-schema/spec"
 import type { Table, TriggerDiffRecord } from "@powersync/common"
 

@@ -1,4 +1,4 @@
-import { orderByWithFractionalIndex } from "@tanstack/db-ivm"
+import { orderByWithFractionalIndex } from "disclearing-db-ivm"
 import { defaultComparator, makeComparator } from "../../utils/comparison.js"
 import { PropRef, followRef } from "../ir.js"
 import { ensureIndexForField } from "../../indexes/auto-index.js"
@@ -14,7 +14,7 @@ import type {
   NamespacedAndKeyedStream,
   NamespacedRow,
 } from "../../types.js"
-import type { IStreamBuilder, KeyValue } from "@tanstack/db-ivm"
+import type { IStreamBuilder, KeyValue } from "disclearing-db-ivm"
 import type { IndexInterface } from "../../indexes/base-index.js"
 import type { Collection } from "../../collection/index.js"
 

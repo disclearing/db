@@ -1,5 +1,5 @@
 import { Component, signal } from '@angular/core';
-import { injectLiveQuery } from '@tanstack/angular-db';
+import { injectLiveQuery } from 'disclearing-angular-db';
 import { eq } from '@tanstack/db';
 import { todosCollection } from '../collections/todos-collection';
 import { FormsModule } from '@angular/forms';

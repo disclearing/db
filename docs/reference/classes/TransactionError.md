@@ -5,7 +5,7 @@ title: TransactionError
 
 # Class: TransactionError
 
-Defined in: [packages/db/src/errors.ts:261](https://github.com/TanStack/db/blob/main/packages/db/src/errors.ts#L261)
+Defined in: [packages/db/src/errors.ts:261](https://github.com/disclearing/db/blob/main/packages/db/src/errors.ts#L261)
 
 ## Extends
 
@@ -31,7 +31,7 @@ Defined in: [packages/db/src/errors.ts:261](https://github.com/TanStack/db/blob/
 new TransactionError(message): TransactionError;
 ```
 
-Defined in: [packages/db/src/errors.ts:262](https://github.com/TanStack/db/blob/main/packages/db/src/errors.ts#L262)
+Defined in: [packages/db/src/errors.ts:262](https://github.com/disclearing/db/blob/main/packages/db/src/errors.ts#L262)
 
 #### Parameters
 

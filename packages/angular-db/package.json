@@ -1,15 +1,15 @@
 {
-  "name": "@tanstack/angular-db",
-  "description": "Angular integration for @tanstack/db",
+  "name": "disclearing-angular-db",
+  "description": "Angular integration for disclearing-db",
   "version": "0.1.29",
   "author": "Ethan McDaniel",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/TanStack/db.git",
+    "url": "https://github.com/disclearing/db.git",
     "directory": "packages/angular-db"
   },
-  "homepage": "https://tanstack.com/db",
+  "homepage": "https://disclearing.github.io/db",
   "keywords": [
     "optimistic",
     "angular",
@@ -17,7 +17,7 @@
   ],
   "packageManager": "pnpm@10.22.0",
   "dependencies": {
-    "@tanstack/db": "workspace:*"
+    "disclearing-db": "workspace:*"
   },
   "devDependencies": {
     "@angular/common": "^19.2.15",

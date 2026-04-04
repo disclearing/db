@@ -8,7 +8,7 @@ Each supported framework comes with its own package. Each framework package re-e
 ## React
 
 ```sh
-npm install @tanstack/react-db
+npm install disclearing-react-db
 ```
 
 TanStack DB is compatible with React v16.8+
@@ -16,19 +16,19 @@ TanStack DB is compatible with React v16.8+
 ## Solid
 
 ```sh
-npm install @tanstack/solid-db
+npm install disclearing-solid-db
 ```
 
 ## Svelte
 
 ```sh
-npm install @tanstack/svelte-db
+npm install disclearing-svelte-db
 ```
 
 ## Vue
 
 ```sh
-npm install @tanstack/vue-db
+npm install disclearing-vue-db
 ```
 
 TanStack DB is compatible with Vue v3.3.0+
@@ -36,7 +36,7 @@ TanStack DB is compatible with Vue v3.3.0+
 ## Angular
 
 ```sh
-npm install @tanstack/angular-db
+npm install disclearing-angular-db
 ```
 
 TanStack DB is compatible with Angular v16.0.0+
@@ -58,7 +58,7 @@ TanStack DB also provides specialized collection packages for different data sou
 For loading data using TanStack Query:
 
 ```sh
-npm install @tanstack/query-db-collection
+npm install disclearing-query-db-collection
 ```
 
 Use `queryCollectionOptions` to fetch data into collections using TanStack Query. This is perfect for REST APIs and existing TanStack Query setups.
@@ -70,7 +70,7 @@ Local storage and in-memory collections are included with the framework packages
 - **LocalStorageCollection** - For persistent local data that syncs across browser tabs
 - **LocalOnlyCollection** - For temporary in-memory data and UI state
 
-Both use `localStorageCollectionOptions` and `localOnlyCollectionOptions` respectively, available from your framework package (e.g., `@tanstack/react-db`).
+Both use `localStorageCollectionOptions` and `localOnlyCollectionOptions` respectively, available from your framework package (e.g., `disclearing-react-db`).
 
 ### Sync Engines
 
@@ -79,7 +79,7 @@ Both use `localStorageCollectionOptions` and `localOnlyCollectionOptions` respec
 For real-time sync with [ElectricSQL](https://electric-sql.com):
 
 ```sh
-npm install @tanstack/electric-db-collection
+npm install disclearing-electric-db-collection
 ```
 
 Use `electricCollectionOptions` to sync data from Postgres databases through ElectricSQL shapes. Ideal for real-time, local-first applications.
@@ -89,7 +89,7 @@ Use `electricCollectionOptions` to sync data from Postgres databases through Ele
 For syncing with [TrailBase](https://trailbase.io) backends:
 
 ```sh
-npm install @tanstack/trailbase-db-collection
+npm install disclearing-trailbase-db-collection
 ```
 
 Use `trailBaseCollectionOptions` to sync records from TrailBase's Record APIs with built-in subscription support.
@@ -99,7 +99,7 @@ Use `trailBaseCollectionOptions` to sync records from TrailBase's Record APIs wi
 For offline-first apps and local persistence with [RxDB](https://rxdb.info):
 
 ```sh
-npm install @tanstack/rxdb-db-collection
+npm install disclearing-rxdb-db-collection
 ```
 
 Use `rxdbCollectionOptions` to bridge an [RxDB collection](https://rxdb.info/rx-collection.html) into TanStack DB.

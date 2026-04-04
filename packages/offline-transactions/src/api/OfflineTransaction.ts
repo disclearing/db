@@ -1,6 +1,6 @@
-import { createTransaction } from "@tanstack/db"
+import { createTransaction } from "disclearing-db"
 import { NonRetriableError } from "../types"
-import type { PendingMutation, Transaction } from "@tanstack/db"
+import type { PendingMutation, Transaction } from "disclearing-db"
 import type {
   CreateOfflineTransactionOptions,
   OfflineMutationFn,

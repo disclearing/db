@@ -5,7 +5,7 @@ title: DeleteKeyNotFoundError
 
 # Class: DeleteKeyNotFoundError
 
-Defined in: [packages/db/src/errors.ts:220](https://github.com/TanStack/db/blob/main/packages/db/src/errors.ts#L220)
+Defined in: [packages/db/src/errors.ts:220](https://github.com/disclearing/db/blob/main/packages/db/src/errors.ts#L220)
 
 ## Extends
 
@@ -19,7 +19,7 @@ Defined in: [packages/db/src/errors.ts:220](https://github.com/TanStack/db/blob/
 new DeleteKeyNotFoundError(key): DeleteKeyNotFoundError;
 ```
 
-Defined in: [packages/db/src/errors.ts:221](https://github.com/TanStack/db/blob/main/packages/db/src/errors.ts#L221)
+Defined in: [packages/db/src/errors.ts:221](https://github.com/disclearing/db/blob/main/packages/db/src/errors.ts#L221)
 
 #### Parameters
 

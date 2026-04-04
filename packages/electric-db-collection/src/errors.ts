@@ -1,4 +1,4 @@
-import { TanStackDBError } from "@tanstack/db"
+import { TanStackDBError } from "disclearing-db"
 
 // Electric DB Collection Errors
 export class ElectricDBCollectionError extends TanStackDBError {

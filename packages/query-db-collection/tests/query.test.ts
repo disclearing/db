@@ -6,7 +6,7 @@ import {
   eq,
   ilike,
   or,
-} from "@tanstack/db"
+} from "disclearing-db"
 import { queryCollectionOptions } from "../src/query"
 import type { QueryFunctionContext } from "@tanstack/query-core"
 import type {
@@ -15,7 +15,7 @@ import type {
   InsertMutationFnParams,
   TransactionWithMutations,
   UpdateMutationFnParams,
-} from "@tanstack/db"
+} from "disclearing-db"
 import type { QueryCollectionConfig, QueryCollectionUtils } from "../src/query"
 
 interface TestItem {
@@ -269,7 +269,7 @@ describe(`QueryCollection`, () => {
     await vi.waitFor(() => {
       const errorCallArgs = consoleErrorSpy.mock.calls.find((call) =>
         call[0].includes(
-          `@tanstack/query-db-collection: queryFn must return an array of objects`
+          `disclearing-query-db-collection: queryFn must return an array of objects`
         )
       )
       expect(errorCallArgs).toBeDefined()
@@ -650,7 +650,7 @@ describe(`QueryCollection`, () => {
       await vi.waitFor(() => {
         const errorCallArgs = consoleErrorSpy.mock.calls.find((call) =>
           call[0].includes(
-            `@tanstack/query-db-collection: select() must return an array of objects`
+            `disclearing-query-db-collection: select() must return an array of objects`
           )
         )
         expect(errorCallArgs).toBeDefined()

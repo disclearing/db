@@ -5,7 +5,7 @@
  */
 
 import { describe, expect, it } from "vitest"
-import { createLiveQueryCollection, eq } from "@tanstack/db"
+import { createLiveQueryCollection, eq } from "disclearing-db"
 import {
   assertAllItemsMatch,
   assertCollectionSize,

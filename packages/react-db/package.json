@@ -1,15 +1,15 @@
 {
-  "name": "@tanstack/react-db",
-  "description": "React integration for @tanstack/db",
+  "name": "disclearing-react-db",
+  "description": "React integration for disclearing-db",
   "version": "0.1.47",
   "author": "Kyle Mathews",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/TanStack/db.git",
+    "url": "https://github.com/disclearing/db.git",
     "directory": "packages/react-db"
   },
-  "homepage": "https://tanstack.com/db",
+  "homepage": "https://disclearing.github.io/db",
   "keywords": [
     "optimistic",
     "react",
@@ -17,7 +17,7 @@
   ],
   "packageManager": "pnpm@10.22.0",
   "dependencies": {
-    "@tanstack/db": "workspace:*",
+    "disclearing-db": "workspace:*",
     "use-sync-external-store": "^1.6.0"
   },
   "devDependencies": {

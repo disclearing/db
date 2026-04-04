@@ -1,12 +1,12 @@
-import { createCollection } from "@tanstack/react-db"
-import { queryCollectionOptions } from "@tanstack/query-db-collection"
+import { createCollection } from "disclearing-react-db"
+import { queryCollectionOptions } from "disclearing-query-db-collection"
 import {
   IndexedDBAdapter,
   LocalStorageAdapter,
   startOfflineExecutor,
-} from "@tanstack/offline-transactions"
+} from "disclearing-offline-transactions"
 import { z } from "zod"
-import type { PendingMutation } from "@tanstack/db"
+import type { PendingMutation } from "disclearing-db"
 import type { Todo } from "~/utils/todos"
 import { queryClient } from "~/utils/queryClient"
 

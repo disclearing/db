@@ -18,7 +18,7 @@ import {
   lte,
   not,
   or,
-} from "@tanstack/db"
+} from "disclearing-db"
 import { assertAllItemsMatch, assertCollectionSize } from "../utils/assertions"
 import { waitForQueryData } from "../utils/helpers"
 import type { E2ETestConfig } from "../types"

@@ -5,7 +5,7 @@ import {
   createLiveQueryCollection,
   eq,
   gt,
-} from "@tanstack/db"
+} from "disclearing-db"
 import { flushSync } from "svelte"
 import { useLiveQuery } from "../src/useLiveQuery.svelte.js"
 import { mockSyncCollectionOptions } from "../../db/tests/utils"

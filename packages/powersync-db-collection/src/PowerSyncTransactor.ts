@@ -3,7 +3,7 @@ import DebugModule from "debug"
 import { asPowerSyncRecord, mapOperationToPowerSync } from "./helpers"
 import { PendingOperationStore } from "./PendingOperationStore"
 import type { AbstractPowerSyncDatabase, LockContext } from "@powersync/common"
-import type { PendingMutation, Transaction } from "@tanstack/db"
+import type { PendingMutation, Transaction } from "disclearing-db"
 import type { EnhancedPowerSyncCollectionConfig } from "./definitions"
 import type { PendingOperation } from "./PendingOperationStore"
 

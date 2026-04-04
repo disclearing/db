@@ -1,4 +1,4 @@
-import { D2, output } from "@tanstack/db-ivm"
+import { D2, output } from "disclearing-db-ivm"
 import { compileQuery } from "../compiler/index.js"
 import { buildQuery, getQueryIR } from "../builder/index.js"
 import {
@@ -14,7 +14,7 @@ import type { LiveQueryInternalUtils } from "./internal.js"
 import type { WindowOptions } from "../compiler/index.js"
 import type { SchedulerContextId } from "../../scheduler.js"
 import type { CollectionSubscription } from "../../collection/subscription.js"
-import type { RootStreamBuilder } from "@tanstack/db-ivm"
+import type { RootStreamBuilder } from "disclearing-db-ivm"
 import type { OrderByOptimizationInfo } from "../compiler/order-by.js"
 import type { Collection } from "../../collection/index.js"
 import type {

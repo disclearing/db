@@ -20,14 +20,14 @@ The `localOnlyCollectionOptions` allows you to create collections that:
 LocalOnly collections are included in the core TanStack DB package:
 
 ```bash
-npm install @tanstack/react-db
+npm install disclearing-react-db
 ```
 
 ## Basic Usage
 
 ```typescript
-import { createCollection } from '@tanstack/react-db'
-import { localOnlyCollectionOptions } from '@tanstack/react-db'
+import { createCollection } from 'disclearing-react-db'
+import { localOnlyCollectionOptions } from 'disclearing-react-db'
 
 const uiStateCollection = createCollection(
   localOnlyCollectionOptions({
@@ -116,7 +116,7 @@ const tempDataCollection = createCollection(
 When using LocalOnly collections with manual transactions (created via `createTransaction`), you must call `utils.acceptMutations()` to persist the changes:
 
 ```typescript
-import { createTransaction } from '@tanstack/react-db'
+import { createTransaction } from 'disclearing-react-db'
 
 const localData = createCollection(
   localOnlyCollectionOptions({
@@ -162,9 +162,9 @@ await tx.commit()
 ## Complete Example: Modal State Management
 
 ```typescript
-import { createCollection } from '@tanstack/react-db'
-import { localOnlyCollectionOptions } from '@tanstack/react-db'
-import { useLiveQuery } from '@tanstack/react-db'
+import { createCollection } from 'disclearing-react-db'
+import { localOnlyCollectionOptions } from 'disclearing-react-db'
+import { useLiveQuery } from 'disclearing-react-db'
 import { z } from 'zod'
 
 // Define schema
@@ -228,9 +228,9 @@ function UserProfileModal() {
 ## Complete Example: Form Draft State
 
 ```typescript
-import { createCollection } from '@tanstack/react-db'
-import { localOnlyCollectionOptions } from '@tanstack/react-db'
-import { useLiveQuery } from '@tanstack/react-db'
+import { createCollection } from 'disclearing-react-db'
+import { localOnlyCollectionOptions } from 'disclearing-react-db'
+import { useLiveQuery } from 'disclearing-react-db'
 
 type FormDraft = {
   id: string

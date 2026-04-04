@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react"
-import { CollectionImpl } from "@tanstack/db"
+import { CollectionImpl } from "disclearing-db"
 import { useLiveQuery } from "./useLiveQuery"
 import type {
   Collection,
@@ -9,7 +9,7 @@ import type {
   LiveQueryCollectionUtils,
   NonSingleResult,
   QueryBuilder,
-} from "@tanstack/db"
+} from "disclearing-db"
 
 /**
  * Type guard to check if utils object has setWindow method (LiveQueryCollectionUtils)

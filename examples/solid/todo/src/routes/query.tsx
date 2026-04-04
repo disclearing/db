@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/solid-router"
-import { useLiveQuery } from "@tanstack/solid-db"
+import { useLiveQuery } from "disclearing-solid-db"
 import { queryConfigCollection, queryTodoCollection } from "../lib/collections"
 import { TodoApp } from "../components/TodoApp"
 

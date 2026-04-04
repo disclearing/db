@@ -5,10 +5,10 @@
 <br />
 
 <div align="center">
-	<a href="https://npmjs.com/package/@tanstack/db" target="\_parent">
+	<a href="https://npmjs.com/package/disclearing-db" target="\_parent">
 	  <img alt="" src="https://img.shields.io/npm/dm/@tanstack/db.svg" alt="npm downloads" />
 	</a>
-	<a href="https://github.com/TanStack/db" target="\_parent">
+	<a href="https://github.com/disclearing/db" target="\_parent">
 	  <img alt="" src="https://img.shields.io/github/stars/TanStack/db.svg?style=social&label=Star" alt="GitHub stars" />
 	</a>
 	<a href="https://bundlejs.com/?q=%40tanstack%2Fdb&config=%7B%22esbuild%22%3A%7B%22external%22%3A%5B%22react%22%2C%22react-dom%22%5D%7D%7D&badge=" target="\_parent">
@@ -47,13 +47,13 @@ TanStack DB solves the problems of building fast, modern apps, helping you:
 
 Data loading is optimized. Interactions feel instantaneous. Your backend stays simple and your app stays blazing fast. No matter how much data you load.
 
-<a href="https://tanstack.com/db" style="font-weight:bold" >Read the docs →</a>
+<a href="https://disclearing.github.io/db" style="font-weight:bold" >Read the docs →</a>
 <br />
 
 ## Get Involved
 
 - We welcome issues and pull requests!
-- Participate in [GitHub discussions](https://github.com/TanStack/db/discussions)
+- Participate in [GitHub discussions](https://github.com/disclearing/db/discussions)
 - Chat with the community on [Discord](https://discord.com/invite/WrRKjPJ)
 - See [CONTRIBUTING.md](./CONTRIBUTING.md) for setup instructions
 

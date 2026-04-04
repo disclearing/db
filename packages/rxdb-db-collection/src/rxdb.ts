@@ -20,7 +20,7 @@ import type {
   CollectionConfig,
   InferSchemaOutput,
   SyncConfig,
-} from "@tanstack/db"
+} from "disclearing-db"
 import type { StandardSchemaV1 } from "@standard-schema/spec"
 
 const debug = DebugModule.debug(`ts/db:rxdb`)

@@ -12,7 +12,7 @@ import {
   createTransaction,
   eq,
   liveQueryCollectionOptions,
-} from "@tanstack/db"
+} from "disclearing-db"
 import { describe, expect, it, onTestFinished, vi } from "vitest"
 import { powerSyncCollectionOptions } from "../src"
 import { PowerSyncTransactor } from "../src/PowerSyncTransactor"

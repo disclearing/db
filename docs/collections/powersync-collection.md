@@ -8,7 +8,7 @@ PowerSync collections provide seamless integration between TanStack DB and [Powe
 
 ## Overview
 
-The `@tanstack/powersync-db-collection` package allows you to create collections that:
+The `disclearing-powersync-db-collection` package allows you to create collections that:
 
 - Automatically mirror the state of an underlying PowerSync SQLite database
 - Reactively update when PowerSync records change
@@ -26,7 +26,7 @@ PowerSync currently works with Web, React Native and Node.js. The examples below
 See the PowerSync quickstart [docs](https://docs.powersync.com/installation/quickstart-guide) for more details.
 
 ```bash
-npm install @tanstack/powersync-db-collection @powersync/web @journeyapps/wa-sqlite
+npm install disclearing-powersync-db-collection @powersync/web @journeyapps/wa-sqlite
 ```
 
 ### 2. Create a PowerSync Database and Schema
@@ -90,8 +90,8 @@ The collection types are automatically inferred from the PowerSync schema table 
 Collection mutations accept SQLite types and queries report data with SQLite types.
 
 ```ts
-import { createCollection } from "@tanstack/react-db"
-import { powerSyncCollectionOptions } from "@tanstack/powersync-db-collection"
+import { createCollection } from "disclearing-react-db"
+import { powerSyncCollectionOptions } from "disclearing-powersync-db-collection"
 
 const documentsCollection = createCollection(
   powerSyncCollectionOptions({
@@ -133,8 +133,8 @@ Note: The input and output types specified in this example still satisfy the und
 The application logic (including the backend) should enforce that all incoming synced data passes validation with the `schema`. Failing to validate data will result in inconsistency of the collection data. This is a fatal error! An `onDeserializationError` handler must be provided to react to this case.
 
 ```ts
-import { createCollection } from "@tanstack/react-db"
-import { powerSyncCollectionOptions } from "@tanstack/powersync-db-collection"
+import { createCollection } from "disclearing-react-db"
+import { powerSyncCollectionOptions } from "disclearing-powersync-db-collection"
 import { z } from "zod"
 
 // Schema validates SQLite types but adds constraints
@@ -308,8 +308,8 @@ PowerSync collections support rich JavaScript types like `Date`, `Boolean`, and 
 ```typescript
 import { z } from "zod"
 import { Schema, Table, column } from "@powersync/web"
-import { createCollection } from "@tanstack/react-db"
-import { powerSyncCollectionOptions } from "@tanstack/powersync-db-collection"
+import { createCollection } from "disclearing-react-db"
+import { powerSyncCollectionOptions } from "disclearing-powersync-db-collection"
 
 // Define PowerSync SQLite schema
 const APP_SCHEMA = new Schema({
@@ -431,8 +431,8 @@ interface PowerSyncCollectionConfig<TTable extends Table, TSchema> {
 When you need more control over transaction handling, such as batching multiple operations or handling complex transaction scenarios, you can use PowerSync's transaction system directly with TanStack DB transactions.
 
 ```ts
-import { createTransaction } from "@tanstack/react-db"
-import { PowerSyncTransactor } from "@tanstack/powersync-db-collection"
+import { createTransaction } from "disclearing-react-db"
+import { PowerSyncTransactor } from "disclearing-powersync-db-collection"
 
 // Create a transaction that won't auto-commit
 const batchTx = createTransaction({

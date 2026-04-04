@@ -1,6 +1,6 @@
-import { createCollection } from "@tanstack/db"
+import { createCollection } from "disclearing-db"
 import { startOfflineExecutor } from "../src/index"
-import type { ChangeMessage, Collection, PendingMutation } from "@tanstack/db"
+import type { ChangeMessage, Collection, PendingMutation } from "disclearing-db"
 import type {
   LeaderElection,
   OfflineConfig,

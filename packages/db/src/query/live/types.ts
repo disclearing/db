@@ -1,4 +1,4 @@
-import type { D2, RootStreamBuilder } from "@tanstack/db-ivm"
+import type { D2, RootStreamBuilder } from "disclearing-db-ivm"
 import type {
   CollectionConfig,
   ResultStream,

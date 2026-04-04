@@ -6,7 +6,7 @@ id: adapter
 ## Installation
 
 ```sh
-npm install @tanstack/angular-db
+npm install disclearing-angular-db
 ```
 
 ## Angular inject function
@@ -23,7 +23,7 @@ The `injectLiveQuery` function creates a live query that automatically updates y
 
 ```typescript
 import { Component } from '@angular/core'
-import { injectLiveQuery } from '@tanstack/angular-db'
+import { injectLiveQuery } from 'disclearing-angular-db'
 import { eq } from '@tanstack/db'
 
 @Component({
@@ -60,7 +60,7 @@ For queries that depend on reactive values, use the `params` option to re-run th
 
 ```typescript
 import { Component, signal } from '@angular/core'
-import { injectLiveQuery } from '@tanstack/angular-db'
+import { injectLiveQuery } from 'disclearing-angular-db'
 import { gt } from '@tanstack/db'
 
 @Component({
@@ -106,7 +106,7 @@ When a parameter value changes:
 
 ```typescript
 import { Component, Input, signal } from '@angular/core'
-import { injectLiveQuery } from '@tanstack/angular-db'
+import { injectLiveQuery } from 'disclearing-angular-db'
 import { eq, and } from '@tanstack/db'
 
 @Component({
@@ -139,7 +139,7 @@ export class TodoListComponent {
 
 ```typescript
 import { Component, input, signal } from '@angular/core'
-import { injectLiveQuery } from '@tanstack/angular-db'
+import { injectLiveQuery } from 'disclearing-angular-db'
 import { eq, and } from '@tanstack/db'
 
 @Component({
@@ -171,7 +171,7 @@ export class TodoListComponent {
 
 ```typescript
 import { Component } from '@angular/core'
-import { injectLiveQuery } from '@tanstack/angular-db'
+import { injectLiveQuery } from 'disclearing-angular-db'
 
 @Component({
   selector: 'app-all-todos',
@@ -190,7 +190,7 @@ export class AllTodosComponent {
 
 ```typescript
 import { Component } from '@angular/core'
-import { injectLiveQuery } from '@tanstack/angular-db'
+import { injectLiveQuery } from 'disclearing-angular-db'
 import { eq } from '@tanstack/db'
 
 @Component({

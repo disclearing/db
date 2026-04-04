@@ -1,4 +1,4 @@
-import type { Collection } from "@tanstack/db"
+import type { Collection } from "disclearing-db"
 
 /**
  * Test data schema types

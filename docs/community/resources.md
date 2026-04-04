@@ -22,7 +22,7 @@ This page contains a curated list of community-created packages, tools, and reso
 
 ### Contributing Your Package
 
-Have you created a collection adapter or integration? We'd love to feature it here! [Submit a PR](https://github.com/TanStack/db/pulls) to add your package.
+Have you created a collection adapter or integration? We'd love to feature it here! [Submit a PR](https://github.com/disclearing/db/pulls) to add your package.
 
 ## Examples & Templates
 

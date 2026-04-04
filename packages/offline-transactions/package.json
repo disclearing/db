@@ -1,12 +1,12 @@
 {
-  "name": "@tanstack/offline-transactions",
+  "name": "disclearing-offline-transactions",
   "version": "1.0.0",
   "description": "Offline-first transaction capabilities for TanStack DB",
   "author": "TanStack",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/TanStack/db.git",
+    "url": "https://github.com/disclearing/db.git",
     "directory": "packages/offline-transactions"
   },
   "publishConfig": {
@@ -53,12 +53,12 @@
   "dependencies": {},
   "devDependencies": {
     "@types/node": "^20.0.0",
-    "@tanstack/db": "workspace:*",
+    "disclearing-db": "workspace:*",
     "eslint": "^8.57.1",
     "typescript": "^5.5.4",
     "vitest": "^3.2.4"
   },
   "peerDependencies": {
-    "@tanstack/db": "*"
+    "disclearing-db": "*"
   }
 }

@@ -1,9 +1,9 @@
 ---
-id: "@tanstack/powersync-db-collection"
-title: "@tanstack/powersync-db-collection"
+id: "disclearing-powersync-db-collection"
+title: "disclearing-powersync-db-collection"
 ---
 
-# @tanstack/powersync-db-collection
+# disclearing-powersync-db-collection
 
 ## Classes
 

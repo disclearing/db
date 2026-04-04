@@ -6,8 +6,8 @@ import {
   queueStrategy,
   throttleStrategy,
   usePacedMutations,
-} from "@tanstack/react-db"
-import type { PendingMutation, Transaction } from "@tanstack/react-db"
+} from "disclearing-react-db"
+import type { PendingMutation, Transaction } from "disclearing-react-db"
 
 interface Item {
   id: number

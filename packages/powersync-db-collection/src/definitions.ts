@@ -4,7 +4,7 @@ import type {
   BaseCollectionConfig,
   CollectionConfig,
   InferSchemaOutput,
-} from "@tanstack/db"
+} from "disclearing-db"
 import type {
   AnyTableColumnType,
   ExtractedTable,

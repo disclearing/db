@@ -21,4 +21,4 @@ export {
   type SimpleComparison,
   type ParseWhereOptions,
   type ParsedOrderBy,
-} from "@tanstack/db"
+} from "disclearing-db"
