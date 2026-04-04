@@ -1,6 +1,6 @@
 {
   "name": "disclearing-firebase-db-collection",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Firebase/Firestore collection integration for TanStack DB",
   "author": "Kyle Mathews",
   "license": "MIT",
